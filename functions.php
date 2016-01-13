@@ -76,7 +76,7 @@ add_action( 'after_setup_theme', 'natural_lite_setup' );
 	Admin Notice		       	     	 
 -------------------------------------------------------------------------------------------------------*/
 
-function natural_lite_admin_notice(){
+function natural_lite_admin_notice() {
     echo '<div class="updated"><p>'; 
     printf( __('Enjoying Natural Lite? <a href="%1$s" target="_blank">Upgrade to the premium Natural Theme</a> for more options, page templates, shortcodes, support and additional features.', 'natural-lite'), 'http://organicthemes.com/theme/natural-theme/');
     echo "</p></div>";
@@ -350,16 +350,6 @@ function natural_lite_wp_link_pages_args_prevnext_add($args) {
 }
 
 add_filter('wp_link_pages_args', 'natural_lite_wp_link_pages_args_prevnext_add');
-
-/*-----------------------------------------------------------------------------------------------------//	
-	Add Home Link To Custom Menu		       	     	 
--------------------------------------------------------------------------------------------------------*/
-
-function home_page_menu_args( $args ) {
-	$args['show_home'] = true;
-	return $args;
-}
-add_filter('wp_page_menu_args', 'home_page_menu_args');
 
 /*-----------------------------------------------------------------------------------------------------//
 	Body Class
