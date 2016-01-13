@@ -1,7 +1,5 @@
 <?php
 /**
-Template Name: Home Page
-*
 * This template is used to display the home page.
 *
 * @package Natural Lite
