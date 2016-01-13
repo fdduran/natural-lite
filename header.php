@@ -4,7 +4,7 @@
 * Displays all of the <head> section and everything up till <div id="wrap">
 *
 * @package Natural Lite
-* @since Natural Lite 3.0
+* @since Natural Lite 1.0
 *
 */
 ?><!DOCTYPE html>

@@ -3,7 +3,7 @@
 * The search form template for our theme.
 *
 * @package Natural Lite
-* @since Natural Lite 4.0
+* @since Natural Lite 1.0
 *
 */
 ?>

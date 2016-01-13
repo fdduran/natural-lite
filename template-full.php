@@ -5,7 +5,7 @@ Template Name: Full Width
 * This template is used to display full-width pages.
 *
 * @package Natural Lite
-* @since Natural Lite 3.0
+* @since Natural Lite 1.0
 *
 */
 get_header(); ?>

@@ -5,7 +5,7 @@ Template Name: Archives
 * This template is used to display site archives of posts, pages and categories.
 *
 * @package Natural Lite
-* @since Natural Lite 3.0
+* @since Natural Lite 1.0
 *
 */
 get_header(); ?>

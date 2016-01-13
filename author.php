@@ -3,7 +3,7 @@
 * This template is used to display author information, when clicking on an authors name.
 *
 * @package Natural Lite
-* @since Natural Lite 3.0
+* @since Natural Lite 1.0
 *
 */
 get_header(); ?>

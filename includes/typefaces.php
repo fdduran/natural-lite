@@ -3,14 +3,14 @@
 * Google Fonts Implementation
 *
 * @package Natural Lite
-* @since Natural Lite 3.0
+* @since Natural Lite 1.0
 *
 */
 
 /**
 * Register Google Fonts
 *
-* @since Natural Lite 3.0
+* @since Natural Lite 1.0
 */
 function natural_lite_register_fonts() {
 	$protocol = is_ssl() ? 'https' : 'http';
@@ -24,7 +24,7 @@ add_action( 'init', 'natural_lite_register_fonts' );
 /**
 * Enqueue Google Fonts on Front End
 *
-* @since Natural Lite 3.0
+* @since Natural Lite 1.0
 */
 
 function natural_lite_fonts() {
@@ -38,7 +38,7 @@ add_action( 'wp_enqueue_scripts', 'natural_lite_fonts' );
 /**
 * Enqueue Google Fonts on Custom Header Page
 *
-* @since Natural Lite 3.0
+* @since Natural Lite 1.0
 */
 function natural_lite_admin_fonts( $hook_suffix ) {
 	if ( 'appearance_page_custom-header' != $hook_suffix )

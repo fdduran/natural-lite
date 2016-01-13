@@ -3,7 +3,7 @@
 * The template for displaying Comments.
 *
 * @package Natural Lite
-* @since Natural Lite 3.0
+* @since Natural Lite 1.0
 *
 */
 ?>

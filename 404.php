@@ -3,7 +3,7 @@
 * This page template is used to display a 404 error message.
 *
 * @package Natural Lite
-* @since Natural Lite 3.0
+* @since Natural Lite 1.0
 *
 */
 get_header(); ?>

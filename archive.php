@@ -4,7 +4,7 @@
 * This template is also the fallback template to 'category.php'.
 *
 * @package Natural Lite
-* @since Natural Lite 3.0
+* @since Natural Lite 1.0
 *
 */
 get_header(); ?>
