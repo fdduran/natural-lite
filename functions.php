@@ -109,6 +109,19 @@ function natural_lite_cat_id_to_name( $id ) {
 	return $name = $term->name;
 }
 
+/*-----------------------------------------------------------------------------------------------------//
+/*	Pagination Fix For Home Page Query
+/*-----------------------------------------------------------------------------------------------------*/
+
+function natural_lite_home_post_count_queries( $news ) {
+	if ( !is_admin() && $news->is_main_query() ) {
+		if ( is_home() ) {
+			$news->set('posts_per_page', 1);
+		}
+	}
+}
+add_action( 'pre_get_posts', 'natural_lite_home_post_count_queries' );
+
 /*-----------------------------------------------------------------------------------------------------//	
 	Register Scripts		       	     	 
 -------------------------------------------------------------------------------------------------------*/
