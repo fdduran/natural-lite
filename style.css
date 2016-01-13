@@ -1784,8 +1784,8 @@ img.alignleft {
 	padding: 6px 12px !important;
 	}
 #commentform textarea {
-	width: 96% !important;
-	padding: 2%;
+	width: 96%;
+	padding: 8px;
 	}
 .commentlist li #respond {
 	border-top: 1px solid rgba(0, 0, 0, .08);
@@ -1962,7 +1962,7 @@ form textarea {
 	font-size: 1em;
 	line-height: 1.4;
 	margin: 4px 12px 4px 0px;
-	padding: 8px 4px !important;
+	padding: 8px 4px;
 	border: 1px inset rgba(0, 0, 0, 0.08);
 	border-radius: 3px;
 	box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .12);
@@ -1976,7 +1976,7 @@ form input[type='number'] {
 	width: 42%;
 	}
 form textarea {
-	width: 96% !important;
+	width: 96%;
 	}
 form input[type='checkbox'],
 form input[type='radio'] {
@@ -1990,7 +1990,7 @@ form input[type='submit'] {
 select {
 	display: block;
 	background: #f9f9f9;
-	background: rgba(0, 0, 0, 0.03);
+	background: rgba(0, 0, 0, .03);
 	max-width: 98%;
 	font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
 	font-size: 1em;
