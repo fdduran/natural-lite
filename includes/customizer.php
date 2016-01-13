@@ -157,7 +157,7 @@ function natural_lite_theme_customizer( $wp_customize ) {
 	
 	$wp_customize->add_section( 'title_tagline' , array(
 		'title'       	=> esc_html__( 'Site Identity', 'natural-lite' ),
-		'description' 	=> esc_html__( 'Upload a logo image to show on your home page', 'natural-lite'),
+		'description' 	=> esc_html__( 'Upload a logo image for your header.', 'natural-lite'),
 		'priority'    	=> 1,
 	) );
 
@@ -195,7 +195,8 @@ function natural_lite_theme_customizer( $wp_customize ) {
 	
 	$wp_customize->add_section( 'natural_lite_theme_section' , array(
 		'title' => esc_html__( 'Theme Options', 'natural-lite' ),
-		'priority' => 1,
+		'description' 	=> esc_html__( 'Set and save options for the homepage and blog.', 'natural-lite'),
+		'priority' => 2,
 	) );
 	
 		// Featured Slideshow Category
