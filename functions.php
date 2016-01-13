@@ -72,6 +72,17 @@ function natural_lite_setup() {
 endif; // natural_lite_setup
 add_action( 'after_setup_theme', 'natural_lite_setup' );
 
+/*-----------------------------------------------------------------------------------------------------//	
+	Admin Notice		       	     	 
+-------------------------------------------------------------------------------------------------------*/
+
+function natural_lite_admin_notice(){
+    echo '<div class="updated"><p>'; 
+    printf( __('Enjoying Natural Lite? <a href="%1$s" target="_blank">Upgrade to the premium Natural Theme</a> for more options, page templates, shortcodes, support and additional features.', 'natural-lite'), 'http://organicthemes.com/theme/natural-theme/');
+    echo "</p></div>";
+}
+add_action('admin_notices', 'natural_lite_admin_notice');
+
 /*-----------------------------------------------------------------------------------------------------//
 	Add Stylesheet To Visual Editor
 -------------------------------------------------------------------------------------------------------*/
