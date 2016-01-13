@@ -190,25 +190,12 @@ function natural_lite_theme_customizer( $wp_customize ) {
 		) ) );
 		
 	//-------------------------------------------------------------------------------------------------------------------//
-	// Theme Options Panel
+	// Theme Options Section
 	//-------------------------------------------------------------------------------------------------------------------//
 	
-	$wp_customize->add_panel( 'natural_lite_theme_options', array(
-	    'priority' => 2,
-	    'capability' => 'edit_theme_options',
-	    'theme_supports' => '',
-	    'title' => esc_html__( 'Theme Options', 'natural-lite' ),
-	    'description' => esc_html__( 'This panel allows you to customize specific areas of the Natural Lite Theme.', 'natural-lite' ),
-	) );
-		
-	//-------------------------------------------------------------------------------------------------------------------//
-	// Home Page Section
-	//-------------------------------------------------------------------------------------------------------------------//
-	
-	$wp_customize->add_section( 'natural_lite_home_section' , array(
-		'title' => esc_html__( 'Home Page', 'natural-lite' ),
-		'panel'	=> 'natural_lite_theme_options',
-		'priority'    => 101,
+	$wp_customize->add_section( 'natural_lite_theme_section' , array(
+		'title' => esc_html__( 'Theme Options', 'natural-lite' ),
+		'priority' => 1,
 	) );
 	
 		// Featured Slideshow Category
@@ -217,8 +204,9 @@ function natural_lite_theme_customizer( $wp_customize ) {
 			'sanitize_callback' => 'natural_lite_sanitize_categories',
 		) );
 		$wp_customize->add_control( new Natural_Category_Dropdown_Control( $wp_customize, 'category_slideshow_home', array(
+			'priority' 	=> 20,
 			'label'		=> esc_html__( 'Featured Slideshow Category', 'natural-lite' ),
-			'section'	=> 'natural_lite_home_section',
+			'section'	=> 'natural_lite_theme_section',
 			'settings'	=> 'category_slideshow_home',
 			'type'		=> 'dropdown-categories',
 		) ) );
@@ -229,8 +217,9 @@ function natural_lite_theme_customizer( $wp_customize ) {
 			'sanitize_callback' => 'natural_lite_sanitize_text',
 		) );
 		$wp_customize->add_control( new natural_lite_theme_options_Number_Control( $wp_customize, 'postnumber_slideshow_home', array(
+			'priority' 	=> 40,
 			'label'		=> esc_html__( 'Featured Slideshow Posts Displayed', 'natural-lite' ),
-			'section'	=> 'natural_lite_home_section',
+			'section'	=> 'natural_lite_theme_section',
 			'settings'	=> 'postnumber_slideshow_home',
 			'type'		=> 'number',
 		) ) );
@@ -241,9 +230,10 @@ function natural_lite_theme_customizer( $wp_customize ) {
 		    'sanitize_callback' => 'natural_lite_sanitize_transition_interval',
 		) );
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'transition_interval', array(
+		    'priority' 	=> 60,
 		    'type' 		=> 'select',
 		    'label' 	=> esc_html__( 'Slideshow Transition Interval', 'natural-lite' ),
-		    'section' 	=> 'natural_lite_home_section',
+		    'section' 	=> 'natural_lite_theme_section',
 		    'choices' 	=> array(
 		        '2000' 		=> esc_html__( '2 Seconds', 'natural-lite' ),
 		        '4000' 		=> esc_html__( '4 Seconds', 'natural-lite' ),
@@ -263,9 +253,10 @@ function natural_lite_theme_customizer( $wp_customize ) {
 	        'sanitize_callback' => 'natural_lite_sanitize_transition_style',
 	    ) );
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'transition_style', array(
+	        'priority' 	=> 80,
 	        'type' 		=> 'select',
 	        'label' 	=> esc_html__( 'Transition Style', 'natural-lite' ),
-	        'section' 	=> 'natural_lite_home_section',
+	        'section' 	=> 'natural_lite_theme_section',
 	        'choices' 	=> array(
 	            'fade' 		=> esc_html__( 'Fade', 'natural-lite' ),
 	            'slide' 	=> esc_html__( 'Slide', 'natural-lite' ),
@@ -277,8 +268,9 @@ function natural_lite_theme_customizer( $wp_customize ) {
 			'sanitize_callback' => 'natural_lite_sanitize_pages',
 		) );
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'natural_lite_page_left', array(
+			'priority' 	=> 100,
 			'label'		=> esc_html__( 'Featured Page Left', 'natural-lite' ),
-			'section'	=> 'natural_lite_home_section',
+			'section'	=> 'natural_lite_theme_section',
 			'settings'	=> 'natural_lite_page_left',
 			'type'		=> 'dropdown-pages',
 		) ) );
@@ -289,8 +281,9 @@ function natural_lite_theme_customizer( $wp_customize ) {
 			'sanitize_callback' => 'natural_lite_sanitize_pages',
 		) );
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'natural_lite_page_mid', array(
+			'priority' 	=> 120,
 			'label'		=> esc_html__( 'Featured Page Middle', 'natural-lite' ),
-			'section'	=> 'natural_lite_home_section',
+			'section'	=> 'natural_lite_theme_section',
 			'settings'	=> 'natural_lite_page_mid',
 			'type'		=> 'dropdown-pages',
 		) ) );
@@ -301,8 +294,9 @@ function natural_lite_theme_customizer( $wp_customize ) {
 			'sanitize_callback' => 'natural_lite_sanitize_pages',
 		) );
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'natural_lite_page_right', array(
+			'priority' 	=> 140,
 			'label'		=> esc_html__( 'Featured Page Three', 'natural-lite' ),
-			'section'	=> 'natural_lite_home_section',
+			'section'	=> 'natural_lite_theme_section',
 			'settings'	=> 'natural_lite_page_right',
 			'type'		=> 'dropdown-pages',
 		) ) );
@@ -313,8 +307,9 @@ function natural_lite_theme_customizer( $wp_customize ) {
 			'sanitize_callback' => 'natural_lite_sanitize_categories',
 		) );
 		$wp_customize->add_control( new Natural_Category_Dropdown_Control( $wp_customize, 'natural_lite_category_news', array(
-			'label'		=> esc_html__( 'News Post Category', 'natural-lite' ),
-			'section'	=> 'natural_lite_home_section',
+			'priority' 	=> 160,
+			'label'		=> esc_html__( 'Featured News Category', 'natural-lite' ),
+			'section'	=> 'natural_lite_theme_section',
 			'settings'	=> 'natural_lite_category_news',
 			'type'		=> 'dropdown-categories',
 		) ) );
@@ -325,21 +320,12 @@ function natural_lite_theme_customizer( $wp_customize ) {
 			'sanitize_callback' => 'natural_lite_sanitize_text',
 		) );
 		$wp_customize->add_control( new natural_lite_theme_options_Number_Control( $wp_customize, 'natural_lite_postnumber_news', array(
+			'priority' 	=> 180,
 			'label'		=> esc_html__( 'Featured News Posts Displayed', 'natural-lite' ),
-			'section'	=> 'natural_lite_home_section',
+			'section'	=> 'natural_lite_theme_section',
 			'settings'	=> 'natural_lite_postnumber_news',
 			'type'		=> 'number',
 		) ) );
-		
-	//-------------------------------------------------------------------------------------------------------------------//
-	// Page Templates
-	//-------------------------------------------------------------------------------------------------------------------//
-	
-	$wp_customize->add_section( 'natural_lite_templates_section' , array(
-		'title'	=> esc_html__( 'Blog Template', 'natural-lite' ),
-		'panel'	=> 'natural_lite_theme_options',
-		'priority'    => 102,
-	) );
 		
 		// Blog Template Category
 		$wp_customize->add_setting( 'natural_lite_category_blog' , array(
@@ -347,8 +333,9 @@ function natural_lite_theme_customizer( $wp_customize ) {
 			'sanitize_callback' => 'natural_lite_sanitize_categories',
 		) );
 		$wp_customize->add_control( new Natural_Category_Dropdown_Control( $wp_customize, 'natural_lite_category_blog', array(
+			'priority' 	=> 200,
 			'label'		=> esc_html__( 'Blog Template Category', 'natural-lite' ),
-			'section'	=> 'natural_lite_templates_section',
+			'section'	=> 'natural_lite_theme_section',
 			'settings'	=> 'natural_lite_category_blog',
 			'type'		=> 'dropdown-categories',
 		) ) );

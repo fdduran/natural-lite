@@ -14,7 +14,7 @@
 <?php if ( is_home() && current_user_can( 'publish_posts' ) ) { ?>
 
 	<h2 class="headline text-center"><?php esc_html_e("No Options Saved", 'natural-lite'); ?></h2>
-	<p class="text-center"><?php printf( wp_kses( __( 'Please set and save the theme options for the home page within the <a href="%1$s">Customizer</a>.', 'natural-lite' ), array( 'a' => array( 'href' => array() ) ) ), esc_url( admin_url( 'customize.php' ) ) ); ?></p>
+	<p class="text-center"><?php printf( wp_kses( __( 'Please set and save the Theme Options for the home page within the <a href="%1$s">Customizer</a>.', 'natural-lite' ), array( 'a' => array( 'href' => array() ) ) ), esc_url( admin_url( 'customize.php' ) ) ); ?></p>
 
 <?php } else { ?>
 	
