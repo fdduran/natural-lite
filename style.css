@@ -1619,6 +1619,7 @@ img.alignleft {
 	width: 20%;
 	font-family: 'Helvetica Neue', Arial, sans-serif;
 	font-size: 1em;
+	line-height: 1;
 	margin-top: 0px !important;
 	margin-bottom: 0px !important;
 	padding: 8px 3% !important;
