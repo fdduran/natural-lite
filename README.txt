@@ -1,4 +1,4 @@
-Natural Lite v1.0.1
+Natural Lite v1.0.2
 http://www.organicthemes.com
  
 Image Credits
@@ -30,3 +30,6 @@ CHANGELOG v1.0.1:
 - Pagination fix for home page
 - Customizer option updates
 - Style tweaks
+
+CHANGELOG v1.0.2:
+- Updated background color

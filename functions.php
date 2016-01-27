@@ -52,11 +52,11 @@ function natural_lite_setup() {
 	
 	// Custom Background
 	$defaults = array(
-		'default-color' => '827768',
-		'default-image'          => get_template_directory_uri() . '/images/default-pattern.png',
-		'wp-head-callback'       => '_custom_background_cb',
-		'admin-head-callback'    => '',
-		'admin-preview-callback' => '',
+		'default-color'			=> '827768',
+		'default-image'         => get_template_directory_uri() . '/images/default-pattern.png',
+		'wp-head-callback'      => '_custom_background_cb',
+		'admin-head-callback'   => '',
+		'admin-preview-callback'=> '',
 	);
 	add_theme_support( 'custom-background', $defaults );
 	
