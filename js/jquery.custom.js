@@ -21,9 +21,9 @@
 		if( ($).flexslider) {
 			var slider = $('.flexslider');
 			slider.fitVids().flexslider({
-				slideshowSpeed		: slider.attr('data-speed'),
+				slideshowSpeed		: 1200,
 				animationDuration	: 600,
-				animation			: slider.attr('data-transition'),
+				animation			: 'fade',
 				video				: false,
 				useCSS				: false,
 				prevText			: '<i class="fa fa-angle-left"></i>',

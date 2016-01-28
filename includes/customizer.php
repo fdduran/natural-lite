@@ -105,33 +105,6 @@ function natural_lite_theme_customizer( $wp_customize ) {
 	    }
 	}
 	
-	function natural_lite_sanitize_columns( $input ) {
-	    $valid = array(
-	        'one' 		=> esc_html__( 'One Column', 'natural-lite' ),
-	        'two' 		=> esc_html__( 'Two Columns', 'natural-lite' ),
-	        'three' 	=> esc_html__( 'Three Columns', 'natural-lite' ),
-	    );
-	 
-	    if ( array_key_exists( $input, $valid ) ) {
-	        return $input;
-	    } else {
-	        return '';
-	    }
-	}
-
-		function natural_lite_sanitize_transition_style( $input ) {
-	    $valid = array(
-	        'fade' 		=> esc_html__( 'Fade', 'natural-lite' ),
-	        'slide' 	=> esc_html__( 'Slide', 'natural-lite' ),
-	    );
-
-	   	if ( array_key_exists( $input, $valid ) ) {
-	        return $input;
-	    } else {
-	        return '';
-	    }
-	}
-	
 	function natural_lite_sanitize_checkbox( $input ) {
 		if ( $input == 1 ) {
 			return 1;
@@ -211,57 +184,6 @@ function natural_lite_theme_customizer( $wp_customize ) {
 			'settings'	=> 'category_slideshow_home',
 			'type'		=> 'dropdown-categories',
 		) ) );
-
-		// Featured Slideshow Posts Displayed
-		$wp_customize->add_setting( 'postnumber_slideshow_home', array(
-			'default' 			=> '6',
-			'sanitize_callback' => 'natural_lite_sanitize_text',
-		) );
-		$wp_customize->add_control( new natural_lite_theme_options_Number_Control( $wp_customize, 'postnumber_slideshow_home', array(
-			'priority' 	=> 40,
-			'label'		=> esc_html__( 'Featured Slideshow Posts Displayed', 'natural-lite' ),
-			'section'	=> 'natural_lite_theme_section',
-			'settings'	=> 'postnumber_slideshow_home',
-			'type'		=> 'number',
-		) ) );
-		
-		// Slider Transition Interval
-		$wp_customize->add_setting( 'transition_interval', array(
-		    'default' => '12000',
-		    'sanitize_callback' => 'natural_lite_sanitize_transition_interval',
-		) );
-		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'transition_interval', array(
-		    'priority' 	=> 60,
-		    'type' 		=> 'select',
-		    'label' 	=> esc_html__( 'Slideshow Transition Interval', 'natural-lite' ),
-		    'section' 	=> 'natural_lite_theme_section',
-		    'choices' 	=> array(
-		        '2000' 		=> esc_html__( '2 Seconds', 'natural-lite' ),
-		        '4000' 		=> esc_html__( '4 Seconds', 'natural-lite' ),
-		        '6000' 		=> esc_html__( '6 Seconds', 'natural-lite' ),
-		        '8000' 		=> esc_html__( '8 Seconds', 'natural-lite' ),
-		        '10000' 	=> esc_html__( '10 Seconds', 'natural-lite' ),
-		        '12000' 	=> esc_html__( '12 Seconds', 'natural-lite' ),
-		        '20000' 	=> esc_html__( '20 Seconds', 'natural-lite' ),
-		        '30000' 	=> esc_html__( '30 Seconds', 'natural-lite' ),
-		        '60000' 	=> esc_html__( '1 Minute', 'natural-lite' ),
-		        '999999999'	=> esc_html__( 'Hold Frame', 'natural-lite' ),
-		    ) ) ) );
-
-		// Slider Transition Style
-		$wp_customize->add_setting( 'transition_style', array(
-	        'default' 			=> 'fade',
-	        'sanitize_callback' => 'natural_lite_sanitize_transition_style',
-	    ) );
-		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'transition_style', array(
-	        'priority' 	=> 80,
-	        'type' 		=> 'select',
-	        'label' 	=> esc_html__( 'Transition Style', 'natural-lite' ),
-	        'section' 	=> 'natural_lite_theme_section',
-	        'choices' 	=> array(
-	            'fade' 		=> esc_html__( 'Fade', 'natural-lite' ),
-	            'slide' 	=> esc_html__( 'Slide', 'natural-lite' ),
-		    ) ) ) );
 
 		// Featured Page Left
 		$wp_customize->add_setting( 'natural_lite_page_left', array(

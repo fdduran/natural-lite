@@ -35,3 +35,4 @@ CHANGELOG v1.0.2:
 - Updated background color
 - Added iframe style
 - Added form submit button style
+- Removed some unnecessary options

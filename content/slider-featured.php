@@ -2,14 +2,14 @@
 <div class="slideshow radius-full">
 
 	<!-- BEGIN .flexslider -->
-	<div class="flexslider radius-full loading" data-speed="<?php echo get_theme_mod('transition_interval', '12000'); ?>" data-transition="<?php echo get_theme_mod('transition_style', 'fade'); ?>">
+	<div class="flexslider radius-full loading">
 	
 		<div class="preloader"></div>
 		
 		<!-- BEGIN .slides -->
 		<ul class="slides">
 		
-			<?php $slider = new WP_Query(array('cat'=>get_theme_mod('category_slideshow_home', '0'), 'posts_per_page'=>get_theme_mod('postnumber_slideshow_home', '6'))); ?>
+			<?php $slider = new WP_Query(array('cat'=>get_theme_mod('category_slideshow_home', '0'), 'posts_per_page'=>'6')); ?>
 			<?php if ($slider->have_posts()) : while($slider->have_posts()) : $slider->the_post(); ?>
 			<?php $video = natural_lite_first_embed_media(); ?>
 			
