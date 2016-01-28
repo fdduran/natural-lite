@@ -36,3 +36,4 @@ CHANGELOG v1.0.2:
 - Added iframe style
 - Added form submit button style
 - Removed some unnecessary options
+- Updated option descriptions

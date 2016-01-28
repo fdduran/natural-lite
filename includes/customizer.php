@@ -168,7 +168,7 @@ function natural_lite_theme_customizer( $wp_customize ) {
 	
 	$wp_customize->add_section( 'natural_lite_theme_section' , array(
 		'title' => esc_html__( 'Theme Options', 'natural-lite' ),
-		'description' 	=> esc_html__( 'Set and save options for the homepage and blog.', 'natural-lite'),
+		'description' 	=> esc_html__( 'Set and save options for the homepage and blog page template.', 'natural-lite'),
 		'priority' => 2,
 	) );
 	
@@ -179,7 +179,7 @@ function natural_lite_theme_customizer( $wp_customize ) {
 		) );
 		$wp_customize->add_control( new Natural_Category_Dropdown_Control( $wp_customize, 'category_slideshow_home', array(
 			'priority' 	=> 20,
-			'label'		=> esc_html__( 'Featured Slideshow Category', 'natural-lite' ),
+			'label'		=> esc_html__( 'Home Slideshow Category', 'natural-lite' ),
 			'section'	=> 'natural_lite_theme_section',
 			'settings'	=> 'category_slideshow_home',
 			'type'		=> 'dropdown-categories',
@@ -192,7 +192,7 @@ function natural_lite_theme_customizer( $wp_customize ) {
 		) );
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'natural_lite_page_left', array(
 			'priority' 	=> 100,
-			'label'		=> esc_html__( 'Featured Page Left', 'natural-lite' ),
+			'label'		=> esc_html__( 'Home Featured Page Left', 'natural-lite' ),
 			'section'	=> 'natural_lite_theme_section',
 			'settings'	=> 'natural_lite_page_left',
 			'type'		=> 'dropdown-pages',
@@ -205,7 +205,7 @@ function natural_lite_theme_customizer( $wp_customize ) {
 		) );
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'natural_lite_page_mid', array(
 			'priority' 	=> 120,
-			'label'		=> esc_html__( 'Featured Page Middle', 'natural-lite' ),
+			'label'		=> esc_html__( 'Home Featured Page Middle', 'natural-lite' ),
 			'section'	=> 'natural_lite_theme_section',
 			'settings'	=> 'natural_lite_page_mid',
 			'type'		=> 'dropdown-pages',
@@ -218,7 +218,7 @@ function natural_lite_theme_customizer( $wp_customize ) {
 		) );
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'natural_lite_page_right', array(
 			'priority' 	=> 140,
-			'label'		=> esc_html__( 'Featured Page Three', 'natural-lite' ),
+			'label'		=> esc_html__( 'Home Featured Page Right', 'natural-lite' ),
 			'section'	=> 'natural_lite_theme_section',
 			'settings'	=> 'natural_lite_page_right',
 			'type'		=> 'dropdown-pages',
@@ -231,7 +231,7 @@ function natural_lite_theme_customizer( $wp_customize ) {
 		) );
 		$wp_customize->add_control( new Natural_Category_Dropdown_Control( $wp_customize, 'natural_lite_category_news', array(
 			'priority' 	=> 160,
-			'label'		=> esc_html__( 'Featured News Category', 'natural-lite' ),
+			'label'		=> esc_html__( 'Home News Category', 'natural-lite' ),
 			'section'	=> 'natural_lite_theme_section',
 			'settings'	=> 'natural_lite_category_news',
 			'type'		=> 'dropdown-categories',
@@ -244,20 +244,20 @@ function natural_lite_theme_customizer( $wp_customize ) {
 		) );
 		$wp_customize->add_control( new natural_lite_theme_options_Number_Control( $wp_customize, 'natural_lite_postnumber_news', array(
 			'priority' 	=> 180,
-			'label'		=> esc_html__( 'Featured News Posts Displayed', 'natural-lite' ),
+			'label'		=> esc_html__( 'Home News Post Number', 'natural-lite' ),
 			'section'	=> 'natural_lite_theme_section',
 			'settings'	=> 'natural_lite_postnumber_news',
 			'type'		=> 'number',
 		) ) );
 		
-		// Blog Template Category
+		// Blog Page Template Category
 		$wp_customize->add_setting( 'natural_lite_category_blog' , array(
 			'default' 			=> '0',
 			'sanitize_callback' => 'natural_lite_sanitize_categories',
 		) );
 		$wp_customize->add_control( new Natural_Category_Dropdown_Control( $wp_customize, 'natural_lite_category_blog', array(
 			'priority' 	=> 200,
-			'label'		=> esc_html__( 'Blog Template Category', 'natural-lite' ),
+			'label'		=> esc_html__( 'Blog Page Template Category', 'natural-lite' ),
 			'section'	=> 'natural_lite_theme_section',
 			'settings'	=> 'natural_lite_category_blog',
 			'type'		=> 'dropdown-categories',
