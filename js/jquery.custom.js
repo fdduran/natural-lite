@@ -21,7 +21,7 @@
 		if( ($).flexslider) {
 			var slider = $('.flexslider');
 			slider.fitVids().flexslider({
-				slideshowSpeed		: 1200,
+				slideshowSpeed		: 12000,
 				animationDuration	: 600,
 				animation			: 'fade',
 				video				: false,
