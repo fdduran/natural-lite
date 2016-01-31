@@ -1462,6 +1462,9 @@ img.alignleft {
 .tagcloud {
 	line-height: 1.2;
 	}
+.widget_contact_info div {
+	margin: 12px 0px;
+	}
 	
 /************************************************
 *	14.	RSS Widget								*

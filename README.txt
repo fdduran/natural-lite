@@ -37,3 +37,4 @@ CHANGELOG v1.0.2:
 - Added form submit button style
 - Removed some unnecessary options
 - Updated option descriptions
+- Style tweaks
