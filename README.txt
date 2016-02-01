@@ -37,4 +37,5 @@ CHANGELOG v1.0.2:
 - Added form submit button style
 - Removed some unnecessary options
 - Updated option descriptions
+- Fixed header when no header image is active
 - Style tweaks

@@ -6,7 +6,8 @@
 		<?php } ?>
 	}
 	
-	#logo, #masthead {
+	.natural-header-active #logo, 
+	.natural-header-active #masthead {
 		<?php if ( 'center' == get_theme_mod('title_align', 'center') ) { ?>
 			left: 50%;
 			-webkit-transform: translateX(-50%) translateY(-50%);
@@ -15,28 +16,27 @@
 		<?php } ?>
 	}
 	
-	#logo, #navigation {
+	#logo, #navigation, #masthead {
 		<?php if ( 'right' == get_theme_mod('title_align', 'center') ) { ?>
 			right: 0;
 			text-align: right;
 		<?php } ?>
 	}
 	
-	#masthead {
+	.natural-header-active #masthead {
 		<?php if ( 'right' == get_theme_mod('title_align', 'center') ) { ?>
 			right: 48px;
-			text-align: right;
 		<?php } ?>
 	}
 	
-	#logo, #navigation {
+	#logo, #navigation, #masthead {
 		<?php if ( 'left' == get_theme_mod('title_align', 'center') ) { ?>
 			left: 0;
 			text-align: left;
 		<?php } ?>
 	}
 	
-	#masthead {
+	.natural-header-active #masthead {
 		<?php if ( 'left' == get_theme_mod('title_align', 'center') ) { ?>
 			left: 48px;
 		<?php } ?>
