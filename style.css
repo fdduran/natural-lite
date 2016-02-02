@@ -1465,7 +1465,8 @@ img.alignleft {
 .tagcloud {
 	line-height: 1.2;
 	}
-.widget_contact_info div {
+.sidebar .widget_contact_info div,
+.widget_contact_info .footer-widget div {
 	margin: 12px 0px;
 	}
 	
