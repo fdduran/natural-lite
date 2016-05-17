@@ -1,6 +1,6 @@
-Natural Lite v1.0.2
+Natural Lite v1.0.3
 http://www.organicthemes.com
- 
+
 Image Credits
 
 - logo.png: Created by David Morgan, http://dav.idmorgan.com. Licensed under the GPLv2 license.
@@ -18,8 +18,8 @@ Font Awesome
 Navigation.js
 
 - Licensed under the GPLv2 license.
- 
-INSTALL: 
+
+INSTALL:
 1. Upload the theme by navigating to Appearance > Themes > Install Themes within the WordPress admin. Select the theme zip file to upload.
 2. Activate the theme after uploading.
 3. Configure and save the theme options within Appearance > Customize.
@@ -38,4 +38,10 @@ CHANGELOG v1.0.2:
 - Removed some unnecessary options
 - Updated option descriptions
 - Fixed header when no header image is active
+- Style tweaks
+
+CHANGELOG v1.0.3:
+- General PHP cleanup
+- Added JS to prevent submenus from displaying off screen
+- Updated footer credit
 - Style tweaks

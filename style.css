@@ -1,17 +1,17 @@
-/******************************************************************************************************************* 
+/*******************************************************************************************************************
 
-	Theme Name: Natural Lite 
+	Theme Name: Natural Lite
 	Theme URI: http://www.organicthemes.com/theme/natural-theme/
 	Description: A versatile business website and blog with a natural and earthy design.
 	Author: Organic Themes
 	Author URI: http://www.organicthemes.com
 	License: GNU General Public License v2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-	Version: 1.0.2
+	Version: 1.0.3
 	Text Domain: natural-lite
 	Domain Path: /languages/
 	Tags: photoblogging, light, gray, white, one-column, two-columns, three-columns, right-sidebar, responsive-layout, custom-background, custom-header, custom-menu, featured-images, featured-image-header, flexible-header, full-width-template, theme-options, translation-ready, sticky-post
-	
+
 	The CSS, XHTML and Design are released under the GPL:
 	http://www.opensource.org/licenses/gpl-license.php
 
@@ -20,7 +20,7 @@
 	Table of Contents:
 
 	 0.	Global
-	 1.	Hyperlinks		
+	 1.	Hyperlinks
 	 2.	Headings
 	 3.	Header
 	 4.	Navigation
@@ -44,7 +44,7 @@
 	22. Forms
 	23. CSS3 Styles
 	24. WordPress Core
-	  
+
 *******************************************************************************************************************/
 
 body {
@@ -74,7 +74,7 @@ em {
 	}
 strong {
 	font-weight: bold;
-	}	
+	}
 hr {
 	border: 0;
 	width: 100%;
@@ -172,14 +172,14 @@ table {
 .hidden {
 	display: none;
 	}
-.text-left { 
-	text-align: left; 
+.text-left {
+	text-align: left;
 	}
-.text-right { 
-	text-align: right; 
+.text-right {
+	text-align: right;
 	}
-.text-center { 
-	text-align: center; 
+.text-center {
+	text-align: center;
 	}
 .align-center {
 	float: none;
@@ -237,7 +237,7 @@ a:focus, a:hover, a:active {
 	color: #669900;
 	text-decoration: underline;
 	}
-	
+
 /************************************************
 *	2.	Headings  								*
 ************************************************/
@@ -250,6 +250,7 @@ h4, h5, h6 {
 	line-height: 1.4;
 	margin: 4px 0px;
 	padding: 4px 0px;
+	word-wrap: break-word;
 	}
 h1 {
 	font-size: 2.4em;
@@ -396,9 +397,9 @@ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active {
 #custom-header .header-img {
 	min-height: 180px;
 	}
-	
+
 /* Conditionals */
-	
+
 .natural-header-active #header {
 	box-shadow: 0px 0px 4px rgba(0, 0, 0, .24);
 	-moz-box-shadow: 0px 0px 4px rgba(0, 0, 0, .24);
@@ -441,7 +442,7 @@ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active {
 .main-small-navigation ul.mobile-menu {
 	display: none;
 	}
-	
+
 /*** ESSENTIAL STYLES ***/
 .menu, .menu * {
 	margin:	0;
@@ -458,7 +459,7 @@ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active {
 .menu ul ul, ul.menu ul {
 	position: absolute;
 	top: -9999px;
-	width: 180px; /* left offset of submenus need to match (see below) */
+	width: 220px; /* left offset of submenus need to match (see below) */
 	}
 .menu ul li ul li, ul.menu ul li {
 	width: 100%;
@@ -479,6 +480,7 @@ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active {
 .menu a {
 	display: inline-block;
 	position: relative;
+	word-wrap: break-word;
 	}
 .menu li:hover ul,
 .menu li.sfHover ul {
@@ -492,7 +494,7 @@ ul.menu li.sfHover li ul {
 	}
 ul.menu li li:hover ul,
 ul.menu li li.sfHover ul {
-	left: 180px; /* match ul width */
+	left: 220px; /* match ul width */
 	top: 0;
 	}
 ul.menu li li:hover li ul,
@@ -501,10 +503,10 @@ ul.menu li li.sfHover li ul {
 	}
 ul.menu li li li:hover ul,
 ul.menu li li li.sfHover ul {
-	left: 180px; /* match ul width */
+	left: 220px; /* match ul width */
 	top: 0;
 	}
-	
+
 /*** SKIN ***/
 #navigation .menu .current_page_item a,
 #navigation .menu .current_page_ancestor a,
@@ -568,14 +570,14 @@ ul.menu li li li.sfHover ul {
 #wrap .menu a {
 	color: rgba(255, 255, 255, .7);
 	}
-.menu a:focus, 
-.menu a:hover, 
+.menu a:focus,
+.menu a:hover,
 .menu a:active {
 	background: rgba(0, 0, 0, .4);
 	outline: 0;
 	}
-#wrap .menu a:focus, 
-#wrap .menu a:hover, 
+#wrap .menu a:focus,
+#wrap .menu a:hover,
 #wrap .menu a:active {
 	color: #FFFFFF;
 	}
@@ -584,9 +586,9 @@ ul.menu li li li.sfHover ul {
 	background: none;
 	text-align: left;
 	text-transform: none;
-	line-height: 32px;
+	line-height: 1.6;
 	margin: 0px;
-	padding: 0px 12px;
+	padding: 8px 12px;
 	border-left: none;
 	border-right: none;
 	border-bottom: 1px solid rgba(255, 255, 255, .1);
@@ -596,13 +598,13 @@ ul.menu li li li.sfHover ul {
 .menu li li a:link,
 .menu li li a:visited {
 	color: rgba(255, 255, 255, .7);
-	} 
+	}
 .menu li li a:focus,
 .menu li li a:hover,
 .menu li li a:active {
 	background: rgba(0, 0, 0, .2);
 	outline: 0;
-	} 
+	}
 .menu li li a:hover {
 	color: #FFFFFF;
 	}
@@ -612,7 +614,7 @@ ul.menu li li li.sfHover ul {
 .menu li.sfHover:hover {
 	background: rgba(0, 0, 0, .2);
 	outline: 0;
-	} 
+	}
 .menu li {
 	margin: 0px;
 	}
@@ -644,7 +646,7 @@ ul.menu li li li.sfHover ul {
 	-khtml-border-radius: 0px;
 	-webkit-border-radius: 0px;
 	}
-	
+
 /*** ARROWS **/
 .sf-arrows .sf-with-ul {
 	padding-right: 2em;
@@ -682,7 +684,7 @@ ul.menu li li li.sfHover ul {
 .sf-arrows ul .sfHover > .sf-with-ul:after {
 	border-left-color: white;
 	}
-	
+
 /************************************************
 *	5. Slideshow							    *
 ************************************************/
@@ -752,12 +754,12 @@ ul.menu li li li.sfHover ul {
 	zoom: 1;
 	}
 .flexslider .slides > li {
-	display: none; 
+	display: none;
 	-webkit-backface-visibility: hidden;
 	}
 .flexslider .slides img {
 	display: block;
-	max-width: 100%; 
+	max-width: 100%;
 	margin: 0px auto 0px;
 	}
 .flex-pauseplay span {
@@ -766,11 +768,11 @@ ul.menu li li li.sfHover ul {
 
 /* Clearfix for the .slides element */
 .slides:after {
-	content: "."; 
-	display: block; 
-	clear: both; 
-	visibility: hidden; 
-	line-height: 0; 
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
 	height: 0;
 	}
 html[xmlns] .slides {
@@ -789,40 +791,40 @@ html[xmlns] .slides {
 
 /* Caption style */
 .flex-caption {
-	background: none; 
+	background: none;
 	-ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000); 
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000);
 	zoom: 1;
 	}
 .flex-caption {
-	background: rgba(0, 0, 0,.3); 
+	background: rgba(0, 0, 0,.3);
 	color: #FFFFFF;
-	width: 96%; 
-	padding: 2%; 
-	margin: 0; 
-	position: absolute; 
+	width: 96%;
+	padding: 2%;
+	margin: 0;
+	position: absolute;
 	left: 0;
-	bottom: 0;  
-	text-shadow: 0 -1px 0 rgba(0, 0, 0,.3); 
+	bottom: 0;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0,.3);
 	}
 
 /* Direction Nav */
-.flex-direction-nav { 
-	height: 0; 
+.flex-direction-nav {
+	height: 0;
 	}
 .flex-direction-nav li a {
-	display: block; 
+	display: block;
 	background: #FFFFFF;
 	font-size: 14px;
 	line-height: 36px;
 	height: 36px;
 	width: 24px;
-	text-decoration: none !important; 
-	margin: 0px;  
+	text-decoration: none !important;
+	margin: 0px;
 	opacity: 1;
-	position: absolute; 
-	bottom: 0; 
-	cursor: pointer; 
+	position: absolute;
+	bottom: 0;
+	cursor: pointer;
 	overflow: visible;
 	z-index: 9999;
 	}
@@ -859,7 +861,7 @@ html[xmlns] .slides {
 	}
 
 /* Control Nav */
-.flex-control-nav { 
+.flex-control-nav {
 	display: block;
 	position: relative;
 	font-weight: 400;
@@ -872,9 +874,9 @@ html[xmlns] .slides {
 .flex-control-nav li {
 	display: inline-block;
 	font-size: 13px;
-	margin: 0px; 
+	margin: 0px;
 	padding: 0px;
-	zoom: 1; 
+	zoom: 1;
 	*display: inline;
 	border-right: 1px solid rgba(0, 0, 0, .08);
 	}
@@ -905,7 +907,7 @@ html[xmlns] .slides {
 	}
 
 /************************************************
-*	6.	Homepage 					     	    * 
+*	6.	Homepage 					     	    *
 ************************************************/
 
 .homepage {
@@ -997,14 +999,14 @@ html[xmlns] .slides {
 	}
 
 /************************************************
-*	7.	Content 					     	    * 
+*	7.	Content 					     	    *
 ************************************************/
 
-#wrap { 
+#wrap {
 	margin: 0px;
 	padding: 0px;
 	}
-.container { 
+.container {
 	max-width: 1120px;
 	margin: 0px auto 0px;
 	padding: 0px 48px;
@@ -1095,7 +1097,7 @@ html[xmlns] .slides {
 .archive-column.last {
 	padding-right: 0;
 	}
-	
+
 /************************************************
 *	8.	Social Media   							*
 ************************************************/
@@ -1164,15 +1166,15 @@ html[xmlns] .slides {
 .social-icons li a[href*="yelp.com"]::before			{ content: '\f1e9'; }
 .social-icons li a[href*="mailto:"]::before				{ content: '\f0e0'; }
 .social-icons li a[href$="/feed/"]::before				{ content: '\f09e'; }
-	
+
 /************************************************
-*	9.	Pagination 	  		      		     	* 
+*	9.	Pagination 	  		      		     	*
 ************************************************/
 
 .pagination {
 	display: block;
 	width: 100%;
-	font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif; 
+	font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
 	font-weight: bold;
 	text-align: center;
 	line-height: 24px;
@@ -1183,8 +1185,8 @@ html[xmlns] .slides {
 	}
 .pagination .page-numbers {
 	display: inline-block;
-	background: #F9F9F9;  
-	color: #666666; 
+	background: #F9F9F9;
+	color: #666666;
 	min-height: 24px;
 	min-width: 24px;
 	text-decoration: none;
@@ -1204,7 +1206,7 @@ html[xmlns] .slides {
 	min-height: 24px;
 	min-width: 24px;
 	line-height: 24px;
-	padding: 0px; 
+	padding: 0px;
 	border-radius: 2px;
 	-moz-border-radius: 2px;
 	-khtml-border-radius: 2px;
@@ -1212,10 +1214,10 @@ html[xmlns] .slides {
 	}
 .pagination .page-numbers.current {
 	display: inline-block;
-	background: #EEEEEE;  
+	background: #EEEEEE;
 	min-height: 24px;
 	min-width: 24px;
-	line-height: 24px; 
+	line-height: 24px;
 	padding: 0px;
 	border-radius: 2px;
 	-moz-border-radius: 2px;
@@ -1251,10 +1253,10 @@ html[xmlns] .slides {
 	}
 
 /************************************************
-*	10.	Images  				     		    * 
+*	10.	Images  				     		    *
 ************************************************/
 
-.feature-img, 
+.feature-img,
 .feature-vid {
 	display: block;
 	text-align: center;
@@ -1353,7 +1355,7 @@ img.alignleft {
 	padding: 0px 0px 8px 0px;
 	border-bottom: 2px solid rgba(0, 0, 0, .24);
 	}
-	
+
 /************************************************
 *	11.	WordPress Gallery					    *
 ************************************************/
@@ -1393,7 +1395,7 @@ img.alignleft {
 	}
 
 /************************************************
-*	12.	Sidebar 	        		    	    * 
+*	12.	Sidebar 	        		    	    *
 ************************************************/
 
 .sidebar {
@@ -1469,7 +1471,7 @@ img.alignleft {
 .widget_contact_info .footer-widget div {
 	margin: 12px 0px;
 	}
-	
+
 /************************************************
 *	14.	RSS Widget								*
 ************************************************/
@@ -1515,7 +1517,7 @@ img.alignleft {
 	margin: 0px;
 	text-align: right;
 	}
-	
+
 /************************************************
 *	16.	Custom Menu Widget						*
 ************************************************/
@@ -1524,7 +1526,7 @@ img.alignleft {
 	float: none;
 	text-align: left;
 	}
-.widget ul.menu .current_page_item a, 
+.widget ul.menu .current_page_item a,
 .widget ul.menu .current-menu-item a {
 	color: #669900;
 	background: none;
@@ -1581,7 +1583,7 @@ img.alignleft {
 .widget ul.menu li ul.sub-menu li ul.sub-menu li {
 	display: none;
 	}
-	
+
 /************************************************
 *	17.	Search Form								*
 ************************************************/
@@ -1864,7 +1866,7 @@ p.logged-in-as {
 	margin: 0px;
 	padding: 0px;
 	}
-	
+
 /************************************************
 *	20.	Buttons  								*
 ************************************************/
@@ -1902,7 +1904,7 @@ a.button:hover, .reply a:hover, #searchsubmit:hover, #prevLink a:hover, #nextLin
 .more-link {
 	margin-top: 24px !important;
 	}
-	
+
 /************************************************
 *	21. Tables		 							*
 ************************************************/
@@ -1939,7 +1941,7 @@ table td {
 	margin: 0px;
 	border: 1px solid #E4E4E4;
 	}
-	
+
 /************************************************
 *	22. Forms									*
 ************************************************/
@@ -2011,7 +2013,7 @@ select {
 	border-radius: 3px;
 	box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .12);
 	}
-	
+
 /************************************************
 *	23.	CSS3 Styles								*
 ************************************************/
