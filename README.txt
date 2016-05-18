@@ -1,4 +1,4 @@
-Natural Lite v1.0.3
+Natural Lite v1.0.4
 http://www.organicthemes.com
 
 Image Credits
@@ -45,3 +45,6 @@ CHANGELOG v1.0.3:
 - Added JS to prevent submenus from displaying off screen
 - Updated footer credit
 - Style tweaks
+
+CHANGELOG v1.0.4:
+- Footer link cleanup
