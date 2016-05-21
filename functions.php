@@ -11,7 +11,7 @@ if ( ! function_exists( 'natural_lite_setup' ) ) :
 	function natural_lite_setup() {
 
 		// Make theme available for translation.
-		load_theme_textdomain( 'natural-lite', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'natural-lite' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );

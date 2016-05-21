@@ -1,4 +1,4 @@
-Natural Lite v1.0.4
+Natural Lite v1.0.5
 http://www.organicthemes.com
 
 Image Credits
@@ -48,3 +48,7 @@ CHANGELOG v1.0.3:
 
 CHANGELOG v1.0.4:
 - Footer link cleanup
+
+CHANGELOG v1.0.5:
+- Fixed text domain in footer
+- Updated text domain function
