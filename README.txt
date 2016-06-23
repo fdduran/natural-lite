@@ -69,7 +69,7 @@ CHANGELOG v1.0.5:
 - Updated text domain function
 
 CHANGELOG v1.0.6:
-- Added core site logo
+- Added core site logo function
 - Added theme prefix to featured images
 - Added theme copyright information to README.txt
 - Removed unused loop-portfolio.php
@@ -77,3 +77,4 @@ CHANGELOG v1.0.6:
 - Removed HTML5 script
 - Removed depreciated tags
 - Disabled default favicon
+- General tweaks and cleanup
