@@ -1,5 +1,20 @@
-Natural Lite v1.0.5
+Natural Lite v1.0.6
+Copyright 2016 Invulu, Inc.
 http://www.organicthemes.com
+Natural Lite is distributed under the terms of the GNU GPL
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+Natural Lite WordPress Theme is derived from Organic Natural WordPress Theme distributed by Organic Themes, Copyright 2016 Invulu, Inc.
+Organic Natural WordPress Theme is distributed under the terms of the GNU GPL.
 
 Image Credits
 
@@ -52,3 +67,13 @@ CHANGELOG v1.0.4:
 CHANGELOG v1.0.5:
 - Fixed text domain in footer
 - Updated text domain function
+
+CHANGELOG v1.0.6:
+- Added core site logo
+- Added theme prefix to featured images
+- Added theme copyright information to README.txt
+- Removed unused loop-portfolio.php
+- Removed prefixes from third party scripts
+- Removed HTML5 script
+- Removed depreciated tags
+- Disabled default favicon

@@ -10,46 +10,54 @@ get_header(); ?>
 
 <style type="text/css" media="screen">
 
-	#logo, #masthead, #navigation {
-		<?php if ( 'center' == get_theme_mod( 'title_align', 'center' ) ) { ?>
-			text-align: center;
-		<?php } ?>
+	<?php $header_text_color = get_header_textcolor(); ?>
+
+	.container .site-title a {
+		color: #<?php echo esc_html( $header_text_color ); ?> ;
 	}
 
-	.natural-header-active #logo,
-	.natural-header-active #masthead {
-		<?php if ( 'center' == get_theme_mod( 'title_align', 'center' ) ) { ?>
-			left: 50%;
-			-webkit-transform: translateX(-50%) translateY(-50%);
-			-ms-transform: translateX(-50%) translateY(-50%);
-			transform: translateX(-50%) translateY(-50%);
-		<?php } ?>
+	<?php if ( 'center' == get_theme_mod( 'title_align', 'center' ) ) { ?>
+	.site-logo, .site-title, #navigation {
+		text-align: center;
 	}
+	<?php } ?>
 
-	#logo, #navigation, #masthead {
-		<?php if ( 'right' == get_theme_mod( 'title_align', 'center' ) ) { ?>
-			right: 0;
-			text-align: right;
-		<?php } ?>
+	<?php if ( 'center' == get_theme_mod( 'title_align', 'center' ) ) { ?>
+	.natural-header-active .container .site-logo,
+	.natural-header-active .container .site-title {
+		left: 50%;
+		-webkit-transform: translateX(-50%) translateY(-50%);
+		-ms-transform: translateX(-50%) translateY(-50%);
+		transform: translateX(-50%) translateY(-50%);
 	}
+	<?php } ?>
 
-	.natural-header-active #masthead {
-		<?php if ( 'right' == get_theme_mod( 'title_align', 'center' ) ) { ?>
-			right: 48px;
-		<?php } ?>
+	<?php if ( 'right' == get_theme_mod( 'title_align', 'center' ) ) { ?>
+	.site-logo, .site-title, #navigation {
+		right: 0;
+		text-align: right;
 	}
+	<?php } ?>
 
-	#logo, #navigation, #masthead {
-		<?php if ( 'left' == get_theme_mod( 'title_align', 'center' ) ) { ?>
-			left: 0;
-			text-align: left;
-		<?php } ?>
+	<?php if ( 'right' == get_theme_mod( 'title_align', 'center' ) ) { ?>
+	.natural-header-active .container .site-logo,
+	.natural-header-active .container .site-title {
+		right: 48px;
 	}
+	<?php } ?>
 
-	.natural-header-active #masthead {
-		<?php if ( 'left' == get_theme_mod( 'title_align', 'center' ) ) { ?>
-			left: 48px;
-		<?php } ?>
+	<?php if ( 'left' == get_theme_mod( 'title_align', 'center' ) ) { ?>
+	.site-logo, .site-title, #navigation {
+		left: 0;
+		text-align: left;
 	}
+	<?php } ?>
+
+	<?php if ( 'left' == get_theme_mod( 'title_align', 'center' ) ) { ?>
+	.natural-header-active .container .site-logo,
+	.natural-header-active .container .site-title {
+		left: 48px;
+	}
+	<?php } ?>
 
 </style>

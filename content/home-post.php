@@ -25,7 +25,7 @@
 	); ?>
 <?php $news = new WP_Query( $query_args ); ?>
 <?php if ( $news->have_posts() ) : while ( $news->have_posts() ) : $news->the_post(); ?>
-<?php if ( has_post_thumbnail() ) { $thumb = wp_get_attachment_image_src( get_post_thumbnail_id(), 'featured-medium' ); } ?>
+<?php if ( has_post_thumbnail() ) { $thumb = wp_get_attachment_image_src( get_post_thumbnail_id(), 'natural-lite-featured-medium' ); } ?>
 <?php $video = natural_lite_first_embed_media(); ?>
 
 <!-- BEGIN .information -->

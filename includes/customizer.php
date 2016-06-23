@@ -136,17 +136,6 @@ function natural_lite_theme_customizer( $wp_customize ) {
 		'priority'    	=> 1,
 	) );
 
-		$wp_customize->add_setting( 'natural_lite_logo', array(
-			'default' 			=> get_template_directory_uri() . '/images/logo.png',
-			'sanitize_callback' => 'esc_url_raw',
-		) );
-		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'natural_lite_logo', array(
-			'label'    => esc_html__( 'Logo', 'natural-lite' ),
-			'section'  => 'title_tagline',
-			'settings' => 'natural_lite_logo',
-			'priority' => 40,
-		) ) );
-
 		// Site Title Align.
 		$wp_customize->add_setting( 'title_align', array(
 			'default' => 'center',

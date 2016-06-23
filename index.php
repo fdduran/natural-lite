@@ -12,7 +12,7 @@ get_header(); ?>
 <div <?php post_class(); ?> id="page-<?php the_ID(); ?>">
 
 	<?php if ( has_post_thumbnail() ) { ?>
-		<div class="feature-img banner shadow radius-full"><?php the_post_thumbnail( 'featured-large' ); ?></div>
+		<div class="feature-img banner shadow radius-full"><?php the_post_thumbnail( 'natural-lite-featured-large' ); ?></div>
 	<?php } ?>
 
 	<!-- BEGIN .row -->

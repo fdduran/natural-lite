@@ -18,7 +18,7 @@
 </div>
 
 <?php if ( has_post_thumbnail() ) { ?>
-	<div class="feature-img"><?php the_post_thumbnail( 'featured-large' ); ?></div>
+	<div class="feature-img"><?php the_post_thumbnail( 'natural-lite-featured-large' ); ?></div>
 <?php } ?>
 
 <?php the_content(); ?>

@@ -22,15 +22,26 @@ if ( ! function_exists( 'natural_lite_setup' ) ) :
 		// Enable support for Post Thumbnails.
 		add_theme_support( 'post-thumbnails' );
 
-		add_image_size( 'featured-large', 2400, 1800, true ); // Large Featured Image.
-		add_image_size( 'featured-medium', 1800, 1200, true ); // Medium Featured Image.
-		add_image_size( 'featured-small', 640, 640 ); // Small Featured Image.
+		add_image_size( 'natural-lite-featured-large', 2400, 1800, true ); // Large Featured Image.
+		add_image_size( 'natural-lite-featured-medium', 1800, 1200, true ); // Medium Featured Image.
+		add_image_size( 'natural-lite-featured-small', 640, 640 ); // Small Featured Image.
 
 		// Create Menus.
 		register_nav_menus( array(
 			'header-menu' => esc_html__( 'Header Menu', 'natural-lite' ),
 			'social-menu' => esc_html__( 'Social Menu', 'natural-lite' ),
 		));
+
+		/*
+		* Enable support for custom logo.
+		*/
+		add_theme_support( 'custom-logo', array(
+			'height'      => 180,
+			'width'       => 400,
+			'flex-height' => true,
+			'flex-width'  => true,
+			'header-text' => array( 'site-title' ),
+		) );
 
 		// Custom Header.
 		register_default_headers( array(
@@ -41,14 +52,14 @@ if ( ! function_exists( 'natural_lite_setup' ) ) :
 			),
 		));
 		$defaults = array(
-		'width'                 => 1600,
-		'height'                => 480,
-		'default-image'			=> get_template_directory_uri() . '/images/default-header.jpg',
-		'flex-height'           => true,
-		'flex-width'            => true,
-		'default-text-color'    => '333333',
-		'header-text'           => false,
-		'uploads'               => true,
+			'width'                 => 1600,
+			'height'                => 480,
+			'default-image'			=> get_template_directory_uri() . '/images/default-header.jpg',
+			'flex-height'           => true,
+			'flex-width'            => true,
+			'default-text-color'    => 'ffffff',
+			'header-text'           => true,
+			'uploads'               => true,
 		);
 		add_theme_support( 'custom-header', $defaults );
 
@@ -88,6 +99,44 @@ function natural_lite_admin_notice() {
 	echo '</p></div>';
 }
 add_action( 'admin_notices', 'natural_lite_admin_notice' );
+
+/*
+-------------------------------------------------------------------------------------------------------
+	Custom Logo
+-------------------------------------------------------------------------------------------------------
+*/
+
+if ( ! function_exists( 'natural_lite_custom_logo' ) ) {
+
+	function natural_lite_custom_logo() {
+
+		if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
+			if ( is_front_page() && is_home() ) {
+				?>
+					<h1 class="site-logo"><?php the_custom_logo(); ?></h1>
+				<?php
+			} else {
+				?>
+					<p class="site-logo"><?php the_custom_logo(); ?></p>
+				<?php
+			}
+		} else {
+			if ( is_front_page() && is_home() ) {
+				?>
+					<h1 class="site-title">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo wp_kses_post( get_bloginfo( 'name' ) ); ?></a>
+					</h1>
+				<?php
+			} else {
+				?>
+					<p class="site-title">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo wp_kses_post( get_bloginfo( 'name' ) ); ?></a>
+					</p>
+				<?php
+			}
+		}
+	}
+}
 
 /*
 -------------------------------------------------------------------------------------------------------
@@ -150,23 +199,17 @@ if ( ! function_exists( 'natural_lite_enqueue_scripts' ) ) {
 		wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.css', array( 'natural-style' ), '1.0' );
 
 		// Resgister Scripts.
-		wp_register_script( 'natural-fitvids', get_template_directory_uri() . '/js/jquery.fitvids.js', array( 'jquery' ), '20130729' );
-		wp_register_script( 'natural-hover', get_template_directory_uri() . '/js/hoverIntent.js', array( 'jquery' ), '20130729' );
-		wp_register_script( 'natural-superfish', get_template_directory_uri() . '/js/superfish.js', array( 'jquery', 'natural-hover' ), '20130729' );
-		wp_register_script( 'natural-isotope', get_template_directory_uri() . '/js/jquery.isotope.js', array( 'jquery' ), '20130729' );
+		wp_register_script( 'fitvids', get_template_directory_uri() . '/js/jquery.fitvids.js', array( 'jquery' ), '20130729' );
+		wp_register_script( 'hover', get_template_directory_uri() . '/js/hoverIntent.js', array( 'jquery' ), '20130729' );
+		wp_register_script( 'superfish', get_template_directory_uri() . '/js/superfish.js', array( 'jquery', 'hover' ), '20130729' );
 
 		// Enqueue Scripts.
-		wp_enqueue_script( 'natural-html5shiv', get_template_directory_uri() . '/js/html5shiv.js' );
-		wp_enqueue_script( 'natural-custom', get_template_directory_uri() . '/js/jquery.custom.js', array( 'jquery', 'natural-superfish', 'natural-fitvids' ), '20130729', true );
+		wp_enqueue_script( 'natural-custom', get_template_directory_uri() . '/js/jquery.custom.js', array( 'jquery', 'superfish', 'fitvids' ), '20130729', true );
 		wp_enqueue_script( 'natural-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20130729', true );
-
-		// IE Conditional Scripts.
-		global $wp_scripts;
-		$wp_scripts->add_data( 'natural-html5shiv', 'conditional', 'lt IE 9' );
 
 		// Load Flexslider on front page and slideshow page template.
 		if ( is_home() ) {
-			wp_enqueue_script( 'natural-flexslider', get_template_directory_uri() . '/js/jquery.flexslider.js', array( 'jquery' ), '20130729' );
+			wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/js/jquery.flexslider.js', array( 'jquery' ), '20130729' );
 		}
 
 		// Load single scripts only on single pages.

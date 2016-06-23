@@ -17,8 +17,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="Shortcut Icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" type="image/x-icon">
-
 <?php get_template_part( 'style', 'options' ); ?>
 
 <link rel="profile" href="http://gmpg.org/xfn/11">
@@ -48,7 +46,7 @@
 
 						<div class="header-img background-cover" <?php if ( ! empty( $header_image ) ) { ?> style="background-image: url(<?php header_image(); ?>);"<?php } ?>>
 
-							<?php get_template_part( 'content/logo', 'title' ); ?>
+							<?php natural_lite_custom_logo(); ?>
 
 							<div class="hide-img"><img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="<?php echo esc_attr( get_bloginfo() ); ?>" /></div>
 
@@ -60,7 +58,7 @@
 
 					<div id="custom-header">
 
-						<?php get_template_part( 'content/logo', 'title' ); ?>
+						<?php natural_lite_custom_logo(); ?>
 
 					</div>
 

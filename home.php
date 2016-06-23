@@ -8,6 +8,8 @@
 
 get_header(); ?>
 
+<?php if ( '' != get_theme_mod( 'category_slideshow_home', '0' ) ) { ?>
+
 <!-- BEGIN .row -->
 <div class="row">
 
@@ -15,12 +17,14 @@ get_header(); ?>
 	<div class="home-slider shadow">
 
 		<?php get_template_part( 'content/slider', 'featured' ); ?>
-		
+
 	<!-- END .home-slider -->
 	</div>
 
 <!-- END .row -->
 </div>
+
+<?php } ?>
 
 <!-- BEGIN .homepage -->
 <div class="homepage">
