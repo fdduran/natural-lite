@@ -93,12 +93,27 @@ Admin Notice
 -----------------------------------------------------------------------------------------------------
 */
 
+/** Function natural_lite_admin_notice */
 function natural_lite_admin_notice() {
-	echo '<div class="updated"><p>';
-	printf( __( 'Enjoying Natural Lite? <a href="%1$s" target="_blank">Upgrade to the premium Natural Theme</a> for more options, page templates, shortcodes, support and additional features.', 'natural-lite' ), 'http://organicthemes.com/theme/natural-theme/' );
-	echo '</p></div>';
+	global $current_user ;
+	$user_id = $current_user->ID;
+	if ( ! get_user_meta( $user_id, 'natural_lite_ignore_notice' ) ) {
+		echo '<div class="notice updated is-dismissible"><p>';
+		printf( __( 'Enjoying Natural Lite? <a href="%1$s" target="_blank">Upgrade to the premium Natural Theme</a> for more options, page templates, shortcodes, support and additional features. <a class="notice-dismiss" type="button" href="%2$s"><span class="screen-reader-text">Hide Notice</span></a>', 'natural-lite' ), 'http://organicthemes.com/theme/natural-theme/', '?natural_lite_nag_ignore=0' );
+		echo '</p></div>';
+	}
 }
 add_action( 'admin_notices', 'natural_lite_admin_notice' );
+
+/** Function natural_lite_nag_ignore */
+function natural_lite_nag_ignore() {
+	global $current_user;
+	$user_id = $current_user->ID;
+	if ( isset( $_GET['natural_lite_nag_ignore'] ) && '0' == $_GET['natural_lite_nag_ignore'] ) {
+		 add_user_meta( $user_id, 'natural_lite_ignore_notice', 'true', true );
+	}
+}
+add_action( 'admin_init', 'natural_lite_nag_ignore' );
 
 /*
 -------------------------------------------------------------------------------------------------------

@@ -1,4 +1,4 @@
-Natural Lite v1.0.6
+Natural Lite v1.0.7.1
 Copyright 2016 Invulu, Inc.
 http://www.organicthemes.com
 Natural Lite is distributed under the terms of the GNU GPL
@@ -15,6 +15,10 @@ GNU General Public License for more details.
 
 Natural Lite WordPress Theme is derived from Organic Natural WordPress Theme distributed by Organic Themes, Copyright 2016 Invulu, Inc.
 Organic Natural WordPress Theme is distributed under the terms of the GNU GPL.
+
+Note:
+
+The site title and site logo are not displayed at the same time. If a logo is added, the site title is hidden from display in its place.
 
 Image Credits
 
@@ -78,3 +82,10 @@ CHANGELOG v1.0.6:
 - Removed depreciated tags
 - Disabled default favicon
 - General tweaks and cleanup
+
+CHANGELOG v1.0.7:
+- Made admin notification dismissible
+- Added note regarding the site logo
+
+CHANGELOG v1.0.7.1:
+- Fixed additional text domain
