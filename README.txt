@@ -1,4 +1,4 @@
-Natural Lite v1.0.7.1
+Natural Lite v1.0.8
 Copyright 2016 Invulu, Inc.
 http://www.organicthemes.com
 Natural Lite is distributed under the terms of the GNU GPL
@@ -89,3 +89,6 @@ CHANGELOG v1.0.7:
 
 CHANGELOG v1.0.7.1:
 - Fixed additional text domain
+
+CHANGELOG v1.0.8:
+- Footer plugin admin notice
