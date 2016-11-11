@@ -7,7 +7,7 @@
 	Author URI: http://www.organicthemes.com
 	License: GNU General Public License v2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-	Version: 1.0.10
+	Version: 1.1
 	Text Domain: natural-lite
 	Domain Path: /languages/
 	Tags: one-column, two-columns, three-columns, right-sidebar, custom-background, custom-header, custom-menu, featured-images, featured-image-header, flexible-header, full-width-template, theme-options, translation-ready, sticky-post, footer-widgets, blog, news
@@ -931,11 +931,13 @@ html[xmlns] .slides {
 	margin-left: 8px;
 	margin-right: 8px;
 }
-.featured-pages .holder.first .information {
+.featured-pages .holder.half:first-child .information,
+.featured-pages .holder.third:first-child .information {
 	margin-left: 0px;
 	margin-right: 16px;
 }
-.featured-pages .holder.last .information {
+.featured-pages .holder.half:last-child .information,
+.featured-pages .holder.third:last-child .information {
 	margin-right: 0px;
 	margin-left: 16px;
 }

@@ -29,7 +29,7 @@ get_header(); ?>
 <!-- BEGIN .homepage -->
 <div class="homepage">
 
-<?php if ( '0' != get_theme_mod( 'natural_lite_page_left', '0' ) && '0' != get_theme_mod( 'natural_lite_page_mid', '0' ) && '0' != get_theme_mod( 'natural_lite_page_right', '0' ) ) { ?>
+<?php if ( get_theme_mod( 'natural_lite_page_left' ) && get_theme_mod( 'natural_lite_page_mid' ) && get_theme_mod( 'natural_lite_page_right' ) ) { ?>
 
 	<!-- BEGIN .row -->
 	<div class="row">
@@ -37,29 +37,115 @@ get_header(); ?>
 		<!-- BEGIN .featured-pages -->
 		<div class="featured-pages radius-full">
 
-			<div class="holder third first">
-				<?php $recent = new WP_Query( 'page_id='.get_theme_mod( 'natural_lite_page_left', '0' ) );
-				while ( $recent->have_posts() ) : $recent->the_post(); ?>
-									<?php get_template_part( 'content/home', 'page' ); ?>
-								<?php endwhile;
-				wp_reset_postdata(); ?>
+			<div class="holder third">
+				<?php $page_query = new WP_Query(
+					array(
+						'page_id' => get_theme_mod( 'natural_lite_page_left', '0' ),
+						'post_type' => 'page',
+					)
+				);
+				?>
+				<?php while ( $page_query->have_posts() ) : $page_query->the_post(); ?>
+					<?php get_template_part( 'content/home', 'page' ); ?>
+				<?php endwhile; ?>
+				<?php wp_reset_postdata(); ?>
 			</div>
 
 			<div class="holder third">
-				<?php $recent = new WP_Query( 'page_id='.get_theme_mod( 'natural_lite_page_mid', '0' ) );
-				while ( $recent->have_posts() ) : $recent->the_post(); ?>
-									<?php get_template_part( 'content/home', 'page' ); ?>
-								<?php endwhile;
-				wp_reset_postdata(); ?>
+				<?php $page_query = new WP_Query(
+					array(
+						'page_id' => get_theme_mod( 'natural_lite_page_mid', '0' ),
+						'post_type' => 'page',
+					)
+				);
+				?>
+				<?php while ( $page_query->have_posts() ) : $page_query->the_post(); ?>
+					<?php get_template_part( 'content/home', 'page' ); ?>
+				<?php endwhile; ?>
+				<?php wp_reset_postdata(); ?>
 			</div>
 
-			<div class="holder third last">
-				<?php $recent = new WP_Query( 'page_id='.get_theme_mod( 'natural_lite_page_right', '0' ) );
-				while ( $recent->have_posts() ) : $recent->the_post(); ?>
-									<?php get_template_part( 'content/home', 'page' ); ?>
-								<?php endwhile;
-				wp_reset_postdata(); ?>
+			<div class="holder third">
+				<?php $page_query = new WP_Query(
+					array(
+						'page_id' => get_theme_mod( 'natural_lite_page_right', '0' ),
+						'post_type' => 'page',
+					)
+				);
+				?>
+				<?php while ( $page_query->have_posts() ) : $page_query->the_post(); ?>
+					<?php get_template_part( 'content/home', 'page' ); ?>
+				<?php endwhile; ?>
+				<?php wp_reset_postdata(); ?>
 			</div>
+
+		<!-- END .featured-pages -->
+		</div>
+
+	<!-- END .row -->
+	</div>
+
+<?php } elseif ( ! get_theme_mod( 'natural_lite_page_left' ) && get_theme_mod( 'natural_lite_page_mid' ) && get_theme_mod( 'natural_lite_page_right' ) || get_theme_mod( 'natural_lite_page_left' ) && ! get_theme_mod( 'natural_lite_page_mid' ) && get_theme_mod( 'natural_lite_page_right' ) || get_theme_mod( 'natural_lite_page_left' ) && get_theme_mod( 'natural_lite_page_mid' ) && ! get_theme_mod( 'natural_lite_page_right' ) ) { ?>
+
+	<!-- BEGIN .row -->
+	<div class="row">
+
+		<!-- BEGIN .featured-pages -->
+		<div class="featured-pages radius-full">
+
+			<?php if ( get_theme_mod( 'natural_lite_page_left' ) ) { ?>
+
+			<div class="holder half">
+				<?php $page_query = new WP_Query(
+					array(
+						'page_id' => get_theme_mod( 'natural_lite_page_left', '0' ),
+						'post_type' => 'page',
+					)
+				);
+				?>
+				<?php while ( $page_query->have_posts() ) : $page_query->the_post(); ?>
+					<?php get_template_part( 'content/home', 'page' ); ?>
+				<?php endwhile; ?>
+				<?php wp_reset_postdata(); ?>
+			</div>
+
+			<?php } ?>
+
+			<?php if ( get_theme_mod( 'natural_lite_page_mid' ) ) { ?>
+
+			<div class="holder half">
+				<?php $page_query = new WP_Query(
+					array(
+						'page_id' => get_theme_mod( 'natural_lite_page_mid', '0' ),
+						'post_type' => 'page',
+					)
+				);
+				?>
+				<?php while ( $page_query->have_posts() ) : $page_query->the_post(); ?>
+					<?php get_template_part( 'content/home', 'page' ); ?>
+				<?php endwhile; ?>
+				<?php wp_reset_postdata(); ?>
+			</div>
+
+			<?php } ?>
+
+			<?php if ( get_theme_mod( 'natural_lite_page_right' ) ) { ?>
+
+			<div class="holder half">
+				<?php $page_query = new WP_Query(
+					array(
+						'page_id' => get_theme_mod( 'natural_lite_page_right', '0' ),
+						'post_type' => 'page',
+					)
+				);
+				?>
+				<?php while ( $page_query->have_posts() ) : $page_query->the_post(); ?>
+					<?php get_template_part( 'content/home', 'page' ); ?>
+				<?php endwhile; ?>
+				<?php wp_reset_postdata(); ?>
+			</div>
+
+			<?php } ?>
 
 		<!-- END .featured-pages -->
 		</div>
