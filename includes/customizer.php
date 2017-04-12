@@ -171,7 +171,7 @@ function natural_lite_theme_customizer( $wp_customize ) {
 		'transport'					=> 'postMessage',
 	) );
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'natural_lite_site_title', array(
-		'label'			=> esc_html__( 'Display Site Title', 'organic-portfolio' ),
+		'label'			=> esc_html__( 'Display Site Title', 'natural-lite' ),
 		'type'			=> 'checkbox',
 		'section'		=> 'title_tagline',
 		'settings'	=> 'natural_lite_site_title',
@@ -185,7 +185,7 @@ function natural_lite_theme_customizer( $wp_customize ) {
 		'transport'					=> 'postMessage',
 	) );
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'header_text', array(
-		'label'			=> esc_html__( 'Display Site Tagline', 'organic-portfolio' ),
+		'label'			=> esc_html__( 'Display Site Tagline', 'natural-lite' ),
 		'type'			=> 'checkbox',
 		'section'		=> 'title_tagline',
 		'settings'	=> 'header_text',
