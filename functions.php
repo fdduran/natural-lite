@@ -209,23 +209,6 @@ add_action( 'admin_init', 'natural_lite_theme_notice_ignore' );
 
 /*
 -------------------------------------------------------------------------------------------------------
-Add Stylesheet To Visual Editor
--------------------------------------------------------------------------------------------------------
-*/
-
-add_action( 'widgets_init', 'natural_lite_add_editor_styles' );
-/**
- * Apply theme's stylesheet to the visual editor.
- *
- * @uses add_editor_style() Links a stylesheet to visual editor
- * @uses get_stylesheet_uri() Returns URI of theme stylesheet
- */
-function natural_lite_add_editor_styles() {
-	add_editor_style( 'css/style-editor.css' );
-}
-
-/*
--------------------------------------------------------------------------------------------------------
 Category ID to Name
 -------------------------------------------------------------------------------------------------------
 */

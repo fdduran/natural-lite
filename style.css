@@ -58,6 +58,13 @@ body {
 	padding: 0px;
 }
 
+body.wp-autoresize,
+.wp-admin body.content {
+	background-color: #ffffff;
+	box-sizing: border-box;
+	padding: 12px 24px !important;
+}
+
 /************************************************
 *	0.	Global									*
 ************************************************/

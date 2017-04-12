@@ -115,5 +115,7 @@ CHANGELOG v1.2:
 - Converted title and logo alignment option to flexbox
 - Added customizer options to hide title and tagline separately
 - Removed unnecessary featured image from displaying on posts page
+- Editor style updates
+- Font enqueue updates
 - General cleanup
 - Style tweaks
