@@ -121,8 +121,42 @@ function natural_lite_theme_customizer( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 
-	// Set site title color to be previewed in real-time.
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+	/**
+	 * Render the site title for the selective refresh partial.
+	 *
+	 * @since Organic Origin 1.0
+	 * @see natural_lite_customize_register()
+	 *
+	 * @return void
+	 */
+	function natural_lite_customize_partial_blogname() {
+		bloginfo( 'name' );
+	}
+
+	/**
+	 * Render the site tagline for the selective refresh partial.
+	 *
+	 * @since Organic Origin 1.0
+	 * @see natural_lite_customize_register()
+	 *
+	 * @return void
+	 */
+	function natural_lite_customize_partial_blogdescription() {
+		bloginfo( 'description' );
+	}
+
+	if ( isset( $wp_customize->selective_refresh ) ) {
+		$wp_customize->selective_refresh->add_partial( 'blogname', array(
+			'selector' => '.site-title a',
+			'container_inclusive' => false,
+			'render_callback' => 'natural_lite_customize_partial_blogname',
+		) );
+		$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
+			'selector' => '.site-description',
+			'container_inclusive' => false,
+			'render_callback' => 'natural_lite_customize_partial_blogdescription',
+		) );
+	}
 
 	/*
 	-----------------------------------------------------------------------------------------------------
@@ -130,11 +164,33 @@ function natural_lite_theme_customizer( $wp_customize ) {
 	-----------------------------------------------------------------------------------------------------
 	*/
 
-	$wp_customize->add_section( 'title_tagline' , array(
-		'title'       	=> esc_html__( 'Site Identity', 'natural-lite' ),
-		'description' 	=> esc_html__( 'Upload a logo image for your header.', 'natural-lite' ),
-		'priority'    	=> 1,
+	// Custom Display Site Title Option.
+	$wp_customize->add_setting( 'natural_lite_site_title', array(
+		'default'						=> '1',
+		'sanitize_callback'	=> 'natural_lite_sanitize_checkbox',
+		'transport'					=> 'postMessage',
 	) );
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'natural_lite_site_title', array(
+		'label'			=> esc_html__( 'Display Site Title', 'organic-portfolio' ),
+		'type'			=> 'checkbox',
+		'section'		=> 'title_tagline',
+		'settings'	=> 'natural_lite_site_title',
+		'priority'	=> 10,
+	) ) );
+
+	// Custom Display Tagline Option.
+	$wp_customize->add_setting( 'header_text', array(
+		'default'						=> '1',
+		'sanitize_callback'	=> 'natural_lite_sanitize_checkbox',
+		'transport'					=> 'postMessage',
+	) );
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'header_text', array(
+		'label'			=> esc_html__( 'Display Site Tagline', 'organic-portfolio' ),
+		'type'			=> 'checkbox',
+		'section'		=> 'title_tagline',
+		'settings'	=> 'header_text',
+		'priority'	=> 15,
+	) ) );
 
 		// Site Title Align.
 		$wp_customize->add_setting( 'title_align', array(

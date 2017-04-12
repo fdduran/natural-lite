@@ -7,7 +7,7 @@
 	Author URI: http://www.organicthemes.com
 	License: GNU General Public License v2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-	Version: 1.1
+	Version: 1.2
 	Text Domain: natural-lite
 	Domain Path: /languages/
 	Tags: one-column, two-columns, three-columns, right-sidebar, custom-background, custom-header, custom-menu, featured-images, featured-image-header, flexible-header, full-width-template, theme-options, translation-ready, sticky-post, footer-widgets, blog, news
@@ -322,7 +322,7 @@ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active {
 	position: relative;
 	z-index: 99;
 }
-#header .site-title {
+.site-title {
 	display: block;
 	font-family: 'Montserrat';
 	font-size: 3em;
@@ -331,15 +331,15 @@ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active {
 	text-shadow: 4px 4px 0px rgba(0, 0, 0, .1);
 	letter-spacing: -1px;
 	line-height: 1.2;
-	padding: 24px 0px;
-	margin: 0px;
+	margin: 12px 0px;
+	padding: 0px;
 }
-#header .site-title a,
-#header .site-title a:link,
-#header .site-title a:visited {
+.site-title a,
+.site-title a:link,
+.site-title a:visited {
 	text-decoration: none;
 }
-#header .site-description {
+.site-description {
 	display: block;
 	color: rgba(0, 0, 0, .4);
 	font-family: 'Montserrat';
@@ -348,9 +348,11 @@ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active {
 	text-transform: uppercase;
 	line-height: 1.4;
 	letter-spacing: 2px;
-	margin: 0px;
+	margin: 12px 0px;
 	padding: 0px;
-	overflow: hidden;
+}
+.logo-title {
+	padding: 48px;
 }
 .site-logo {
 	display: block;
@@ -368,15 +370,6 @@ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active {
 	max-height: 50%;
 	max-width: 50%;
 }
-.natural-header-active .site-logo,
-.natural-header-active .site-title {
-	top: 50%;
-	position: absolute;
-	-webkit-transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	transform: translateY(-50%);
-	z-index: 7;
-}
 #custom-header {
 	display: block;
 	position: relative;
@@ -393,6 +386,8 @@ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active {
 	padding: 12px;
 }
 #custom-header .header-img {
+	display: flex;
+	align-content: stretch;
 	min-height: 180px;
 }
 

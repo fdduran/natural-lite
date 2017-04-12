@@ -46,9 +46,27 @@
 
 						<div class="header-img background-cover" <?php if ( ! empty( $header_image ) ) { ?> style="background-image: url(<?php header_image(); ?>);"<?php } ?>>
 
-							<?php natural_lite_custom_logo(); ?>
+							<div class="logo-title">
 
-							<div class="hide-img"><img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="<?php echo esc_attr( get_bloginfo() ); ?>" /></div>
+								<?php the_custom_logo(); ?>
+
+								<?php if ( is_front_page() && is_home() ) { ?>
+									<h1 class="site-title">
+										<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo wp_kses_post( get_bloginfo( 'name' ) ); ?></a>
+									</h1>
+									<h2 class="site-description">
+										<?php echo html_entity_decode( get_bloginfo( 'description' ) ); ?>
+									</h2>
+								<?php } else { ?>
+									<p class="site-title">
+										<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo wp_kses_post( get_bloginfo( 'name' ) ); ?></a>
+									</p>
+									<p class="site-description">
+										<?php echo html_entity_decode( get_bloginfo( 'description' ) ); ?>
+									</p>
+								<?php } ?>
+
+							</div>
 
 						</div>
 
@@ -58,7 +76,23 @@
 
 					<div id="custom-header">
 
-						<?php natural_lite_custom_logo(); ?>
+						<?php the_custom_logo(); ?>
+
+						<?php if ( is_front_page() && is_home() ) { ?>
+							<h1 class="site-title">
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo wp_kses_post( get_bloginfo( 'name' ) ); ?></a>
+							</h1>
+							<h2 class="site-description">
+								<?php echo html_entity_decode( get_bloginfo( 'description' ) ); ?>
+							</h2>
+						<?php } else { ?>
+							<p class="site-title">
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo wp_kses_post( get_bloginfo( 'name' ) ); ?></a>
+							</p>
+							<p class="site-description">
+								<?php echo html_entity_decode( get_bloginfo( 'description' ) ); ?>
+							</p>
+						<?php } ?>
 
 					</div>
 

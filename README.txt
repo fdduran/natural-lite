@@ -1,4 +1,4 @@
-Natural Lite v1.1
+Natural Lite v1.2
 Copyright 2016 Organic Themes.
 http://www.organicthemes.com
 Natural Lite is distributed under the terms of the GNU GPL
@@ -27,6 +27,9 @@ Image Credits
 - screenshot.png: Created by David Morgan, http://dav.idmorgan.com. Licensed under the GPLv2 license.
 - default-header.jpg: Downloaded from Unsplash, https://unsplash.com. Licensed under Creative Commons Zero license, https://unsplash.com/license.
 - default-image.jpg: Downloaded from Unsplash, https://unsplash.com. Licensed under Creative Commons Zero license, https://unsplash.com/license.
+- image-services.jpg: Downloaded from Unsplash, https://unsplash.com. Licensed under Creative Commons Zero license, https://unsplash.com/license.
+- image-about.jpg: Downloaded from Unsplash, https://unsplash.com. Licensed under Creative Commons Zero license, https://unsplash.com/license.
+- image-contact.jpg: Downloaded from Unsplash, https://unsplash.com. Licensed under Creative Commons Zero license, https://unsplash.com/license.
 - default-pattern.png: Downloaded from Subtle Patterns, http://subtlepatterns.com. Licensed under the CC BY-SA 3.0 license.
 
 Font Awesome
@@ -102,4 +105,15 @@ CHANGELOG v1.0.10:
 CHANGELOG v1.1:
 - Fix for featured home pages
 - Added new 2 page display for home featured pages
+- Style tweaks
+
+CHANGELOG v1.2:
+- Added starter content
+- Updated admin notice to be dismissible
+- Registered site title and description as partials
+- Updated logo and site title functionality
+- Converted title and logo alignment option to flexbox
+- Added customizer options to hide title and tagline separately
+- Removed unnecessary featured image from displaying on posts page
+- General cleanup
 - Style tweaks

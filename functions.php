@@ -43,7 +43,9 @@ if ( ! function_exists( 'natural_lite_setup' ) ) :
 			'header-text' => array( 'site-title' ),
 		) );
 
-		// Custom Header.
+		/*
+		* Enable support for custom header.
+		*/
 		register_default_headers( array(
 			'default' => array(
 			'url'   => get_template_directory_uri() . '/images/default-header.jpg',
@@ -57,13 +59,14 @@ if ( ! function_exists( 'natural_lite_setup' ) ) :
 			'default-image'			=> get_template_directory_uri() . '/images/default-header.jpg',
 			'flex-height'           => true,
 			'flex-width'            => true,
-			'default-text-color'    => 'ffffff',
-			'header-text'           => true,
+			'header-text'           => false,
 			'uploads'               => true,
 		);
 		add_theme_support( 'custom-header', $defaults );
 
-		// Custom Background.
+		/*
+		* Enable support for custom background.
+		*/
 		$defaults = array(
 		'default-color'			=> '827768',
 		'default-image'         => get_template_directory_uri() . '/images/default-pattern.png',
@@ -73,7 +76,9 @@ if ( ! function_exists( 'natural_lite_setup' ) ) :
 		);
 		add_theme_support( 'custom-background', $defaults );
 
-		// Switch default core markup for search form, comment form, and comments to output valid HTML5.
+		/*
+		* Enable support for HTML5 output.
+		*/
 		add_theme_support( 'html5', array(
 			'search-form',
 			'comment-form',
@@ -82,85 +87,125 @@ if ( ! function_exists( 'natural_lite_setup' ) ) :
 			'caption',
 		) );
 
+		/*
+		* Enable support for starter content.
+		*/
+		add_theme_support( 'starter-content', array(
+
+			// Starter theme options.
+			'theme_mods' => array(
+				'natural_lite_page_left' => '{{about}}',
+				'natural_lite_page_mid' => '{{services}}',
+				'natural_lite_page_right' => '{{contact}}',
+			),
+
+			// Static front page set to Home, posts page set to Blog.
+			'options' => array(
+				'custom_logo' => '{{logo}}',
+				'show_on_front' => 'page',
+				'page_on_front' => '{{home}}',
+				'page_for_posts' => '{{blog}}',
+				'blogdescription' => __( 'My Awesome <b>Organic Themes</b><br /> Website', 'natural-lite' ),
+			),
+
+			// Starter pages to include.
+			'posts' => array(
+				'home' => array(
+					'template' => 'template-home.php',
+				),
+				'about' => array(
+					'thumbnail' => '{{image-about}}',
+				),
+				'services' => array(
+					'post_type' => 'page',
+					'post_title' => __( 'Services', 'natural-lite' ),
+					'post_content' => __( '<p>This is an example services page. You may want to write about the various services your business provides.</p>', 'natural-lite' ),
+					'thumbnail' => '{{image-services}}',
+				),
+				'blog',
+				'contact' => array(
+					'thumbnail' => '{{image-contact}}',
+				),
+			),
+
+			// Starter attachments for default images.
+			'attachments' => array(
+				'logo' => array(
+					'post_title' => __( 'Logo', 'natural-lite' ),
+					'file' => 'images/logo.png',
+				),
+				'image-about' => array(
+					'post_title' => __( 'About Image', 'natural-lite' ),
+					'file' => 'images/image-about.jpg',
+				),
+				'image-services' => array(
+					'post_title' => __( 'Services Image', 'natural-lite' ),
+					'file' => 'images/image-services.jpg',
+				),
+				'image-contact' => array(
+					'post_title' => __( 'Contact Image', 'natural-lite' ),
+					'file' => 'images/image-contact.jpg',
+				),
+			),
+
+			// Add pages to primary navigation menu.
+			'nav_menus' => array(
+				'header-menu' => array(
+					'name' => __( 'Primary Navigation', 'natural-lite' ),
+					'items' => array(
+						'page_home',
+						'page_about',
+						'page_services' => array(
+							'type' => 'post_type',
+							'object' => 'page',
+							'object_id' => '{{services}}',
+						),
+						'page_blog',
+						'page_contact',
+					),
+				)
+			),
+
+			// Add test widgets to footer.
+			'widgets' => array(
+				'footer' => array(
+					'text_business_info',
+					'meta',
+					'recent-posts',
+					'text_about',
+				)
+			)
+
+		) );
+
 	}
 
 endif; // End natural_lite_setup.
 add_action( 'after_setup_theme', 'natural_lite_setup' );
 
 /*
------------------------------------------------------------------------------------------------------
-Admin Notice
------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+	Admin Notice
+-------------------------------------------------------------------------------------------------------
 */
 
-/** Function natural_lite_admin_notice */
-function natural_lite_admin_notice() {
-	global $current_user ;
-	$user_id = $current_user->ID;
-	if ( ! get_user_meta( $user_id, 'natural_lite_ignore_notice' ) ) {
-		echo '<div class="notice updated is-dismissible"><p>';
-		printf( __( 'Enjoying Natural Lite? <a href="%1$s" target="_blank">Upgrade to the premium Natural Theme</a> for more options, page templates, shortcodes, support and additional features. <a class="notice-dismiss" type="button" href="%2$s"><span class="screen-reader-text">Hide Notice</span></a>', 'natural-lite' ), 'http://organicthemes.com/theme/natural-theme/', '?natural_lite_nag_ignore=0' );
-		echo '</p></div>';
-	}
-}
-add_action( 'admin_notices', 'natural_lite_admin_notice' );
-
-/** Function natural_lite_nag_ignore */
-function natural_lite_nag_ignore() {
+function natural_lite_theme_notice() {
 	global $current_user;
 	$user_id = $current_user->ID;
-	if ( isset( $_GET['natural_lite_nag_ignore'] ) && '0' == $_GET['natural_lite_nag_ignore'] ) {
-		 add_user_meta( $user_id, 'natural_lite_ignore_notice', 'true', true );
+	if ( ! get_user_meta( $user_id, 'natural_lite_theme_notice_ignore') ) {
+		echo '<div class="notice notice-warning" style="position: relative;"><p>'. __( 'Enjoying the <b>Natural Lite</b> theme? Consider <a href="https://organicthemes.com/theme/natural-theme/" target="_blank">upgrading</a> to the premium version for more customization options, page templates and support.', 'natural-lite' ) .' <a class="notice-dismiss" href="?natural-lite-ignore-notice" style="text-decoration: none;"></a></p></div>';
 	}
 }
-add_action( 'admin_init', 'natural_lite_nag_ignore' );
+add_action( 'admin_notices', 'natural_lite_theme_notice' );
 
-if ( ! class_exists( 'Organic_Footer_Modifier' ) ) {
-	function natural_lite_admin_footer_notice() {
-		echo '<div class="updated"><p>';
-		printf( __( 'Want to remove or change those pesky footer credits? Get the <a href="%1$s" target="_blank">Footer Change Plugin</a> from Organic Themes! Use discount code <b>FOOTERSAVE10</b> to save $10!', 'natural-lite' ), 'http://organicthemes.com/footer-change-plugin/' );
-		echo '</p></div>';
-	}
-	add_action( 'admin_notices', 'natural_lite_admin_footer_notice' );
-}
-
-/*
--------------------------------------------------------------------------------------------------------
-	Custom Logo
--------------------------------------------------------------------------------------------------------
-*/
-
-if ( ! function_exists( 'natural_lite_custom_logo' ) ) {
-
-	function natural_lite_custom_logo() {
-
-		if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
-			if ( is_front_page() && is_home() ) {
-				?>
-					<h1 class="site-logo"><?php the_custom_logo(); ?></h1>
-				<?php
-			} else {
-				?>
-					<p class="site-logo"><?php the_custom_logo(); ?></p>
-				<?php
-			}
-		} else {
-			if ( is_front_page() && is_home() ) {
-				?>
-					<h1 class="site-title">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo wp_kses_post( get_bloginfo( 'name' ) ); ?></a>
-					</h1>
-				<?php
-			} else {
-				?>
-					<p class="site-title">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo wp_kses_post( get_bloginfo( 'name' ) ); ?></a>
-					</p>
-				<?php
-			}
-		}
+function natural_lite_theme_notice_ignore() {
+	global $current_user;
+	$user_id = $current_user->ID;
+	if ( isset( $_GET['natural-lite-ignore-notice'] ) ) {
+		add_user_meta( $user_id, 'natural_lite_theme_notice_ignore', 'true', true );
 	}
 }
+add_action( 'admin_init', 'natural_lite_theme_notice_ignore' );
 
 /*
 -------------------------------------------------------------------------------------------------------
@@ -200,7 +245,7 @@ Pagination Fix For Home Page Query
 
 function natural_lite_home_post_count_queries( $news ) {
 	if ( ! is_admin() && $news->is_main_query() ) {
-		if ( is_home() ) {
+		if ( is_page_template( 'template-home.php' ) ) {
 			$news->set( 'posts_per_page', 1 );
 		}
 	}
@@ -232,7 +277,7 @@ if ( ! function_exists( 'natural_lite_enqueue_scripts' ) ) {
 		wp_enqueue_script( 'natural-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20130729', true );
 
 		// Load Flexslider on front page and slideshow page template.
-		if ( is_home() ) {
+		if ( is_page_template( 'template-home.php' ) ) {
 			wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/js/jquery.flexslider.js', array( 'jquery' ), '20130729' );
 		}
 

@@ -1,6 +1,8 @@
 <?php
 /**
- * This template is used to display the home page.
+Template Name: Home Page
+ *
+ * This template is used to display full-width pages.
  *
  * @package Natural Lite
  * @since Natural Lite 1.0

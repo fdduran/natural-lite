@@ -1,5 +1,5 @@
 jQuery( document ).ready( function( $ ) {
-	
+
 	/**
 	 * Real-time preview of the site title and description text
 	 */
@@ -15,21 +15,41 @@ jQuery( document ).ready( function( $ ) {
 	} );
 
 	/**
-	 * Real-time preview of the site title color
+	 * Real-time preview of the site title.
 	 */
-	wp.customize( 'header_textcolor', function( value ) {
+	wp.customize( 'natural_lite_site_title', function( value ) {
 		value.bind( function( to ) {
-			if ( 'blank' == to ) {
-				$( '.site-title, .site-description' ).css( {
-					'clip': 'rect(1px, 1px, 1px, 1px)',
+			if ( '1' != to ) {
+				$( '.site-title' ).css( {
+					'padding' : '0',
+					'left' : '-9999px',
 					'position': 'absolute'
 				} );
 			} else {
-				$( '.site-title a' ).css( {
-					'color': to
+				$( '.site-title' ).css( {
+					'padding' : '12px',
+					'left' : '0',
+					'position': 'relative'
 				} );
-				$( '.site-title, .site-description' ).css( {
-					'clip': 'auto',
+			}
+		} );
+	} );
+
+	/**
+	 * Real-time preview of the site tagline.
+	 */
+	wp.customize( 'header_text', function( value ) {
+		value.bind( function( to ) {
+			if ( '1' != to ) {
+				$( '.site-description' ).css( {
+					'padding' : '0',
+					'left' : '-9999px',
+					'position': 'absolute'
+				} );
+			} else {
+				$( '.site-description' ).css( {
+					'padding' : '12px',
+					'left' : '0',
 					'position': 'relative'
 				} );
 			}
