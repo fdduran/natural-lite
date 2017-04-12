@@ -76,23 +76,27 @@
 
 					<div id="custom-header">
 
-						<?php the_custom_logo(); ?>
+						<div class="logo-title">
 
-						<?php if ( is_front_page() && is_home() ) { ?>
-							<h1 class="site-title">
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo wp_kses_post( get_bloginfo( 'name' ) ); ?></a>
-							</h1>
-							<h2 class="site-description">
-								<?php echo html_entity_decode( get_bloginfo( 'description' ) ); ?>
-							</h2>
-						<?php } else { ?>
-							<p class="site-title">
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo wp_kses_post( get_bloginfo( 'name' ) ); ?></a>
-							</p>
-							<p class="site-description">
-								<?php echo html_entity_decode( get_bloginfo( 'description' ) ); ?>
-							</p>
-						<?php } ?>
+							<?php the_custom_logo(); ?>
+
+							<?php if ( is_front_page() && is_home() ) { ?>
+								<h1 class="site-title">
+									<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo wp_kses_post( get_bloginfo( 'name' ) ); ?></a>
+								</h1>
+								<h2 class="site-description">
+									<?php echo html_entity_decode( get_bloginfo( 'description' ) ); ?>
+								</h2>
+							<?php } else { ?>
+								<p class="site-title">
+									<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo wp_kses_post( get_bloginfo( 'name' ) ); ?></a>
+								</p>
+								<p class="site-description">
+									<?php echo html_entity_decode( get_bloginfo( 'description' ) ); ?>
+								</p>
+							<?php } ?>
+
+						</div>
 
 					</div>
 

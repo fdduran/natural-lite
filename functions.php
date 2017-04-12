@@ -499,7 +499,10 @@ function natural_lite_body_class( $classes ) {
 	$header_image = get_header_image();
 
 	if ( ! empty( $header_image ) ) {
-		$classes[] = 'natural-header-active'; }
+		$classes[] = 'natural-header-active';
+	} else {
+		$classes[] = 'natural-header-inactive'; 
+	}
 
 	if ( empty( $header_image ) ) {
 		$classes[] = 'natural-header-inactive'; }

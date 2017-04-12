@@ -44,30 +44,30 @@ get_header(); ?>
 	}
 
 	<?php if ( 'center' == get_theme_mod( 'title_align', 'center' ) ) { ?>
-	.site-logo, .site-title, #navigation {
+	.custom-logo-link, .site-title, .site-description, #navigation {
 		text-align: center;
 	}
-	.natural-header-active #custom-header .logo-title {
+	#custom-header .logo-title {
 		text-align: center;
 		margin: 0px auto 0px;
 	}
 	<?php } ?>
 
 	<?php if ( 'right' == get_theme_mod( 'title_align', 'center' ) ) { ?>
-	.site-logo, .site-title, #navigation {
+	.custom-logo-link, .site-title, .site-description, #navigation {
 		text-align: right;
 	}
-	.natural-header-active #custom-header .header-img {
+	#custom-header .header-img {
 		text-align: right;
 		justify-content: flex-end;
 	}
 	<?php } ?>
 
 	<?php if ( 'left' == get_theme_mod( 'title_align', 'center' ) ) { ?>
-	.site-logo, .site-title, #navigation {
+	.custom-logo-link, .site-title, .site-description, #navigation {
 		text-align: left;
 	}
-	.natural-header-active #custom-header .header-img {
+	#custom-header .header-img {
 		text-align: left;
 		justify-content: flex-start;
 	}
