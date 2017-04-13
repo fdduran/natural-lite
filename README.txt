@@ -1,4 +1,4 @@
-Natural Lite v1.2.2
+Natural Lite v1.2.3
 Copyright 2016 Organic Themes.
 http://www.organicthemes.com
 Natural Lite is distributed under the terms of the GNU GPL
@@ -126,3 +126,6 @@ CHANGELOG v1.2.1:
 
 CHANGELOG v1.2.2:
 - Fixed issues with header when no header image
+
+CHANGELOG v1.2.3:
+- Editor style tweaks

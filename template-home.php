@@ -2,7 +2,7 @@
 /**
 Template Name: Home Page
  *
- * This template is used to display full-width pages.
+ * This template is used to display the home page.
  *
  * @package Natural Lite
  * @since Natural Lite 1.0
