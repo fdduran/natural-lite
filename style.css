@@ -7,7 +7,7 @@
 	Author URI: http://www.organicthemes.com
 	License: GNU General Public License v2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-	Version: 1.3.1
+	Version: 1.3.2.1
 	Text Domain: natural-lite
 	Domain Path: /languages/
 	Tags: one-column, two-columns, three-columns, right-sidebar, custom-background, custom-header, custom-menu, featured-images, featured-image-header, flexible-header, full-width-template, theme-options, translation-ready, sticky-post, footer-widgets, blog, news
@@ -44,6 +44,7 @@
 	22. Forms
 	23. CSS3 Styles
 	24. WordPress Core
+	25. Organic Widgets
 
 *******************************************************************************************************************/
 
@@ -291,7 +292,8 @@ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active {
 	text-decoration: none;
 	border: none;
 }
-.headline {
+.headline,
+.organic-widgets-title {
 	font-size: 2.7em;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -869,7 +871,7 @@ html[xmlns] .slides {
 	font-size: 0;
 	text-align: center;
 	margin: 0px auto 0px;
-	padding: 0px 24px !important;
+	padding: 0px 24px;
 	z-index: 999;
 }
 .flex-control-nav li {
@@ -2167,7 +2169,7 @@ a, a:link, a:visited {
 }
 
 /************************************************
-*	26.	WordPress Core
+*	24.	WordPress Core
 ************************************************/
 
 /* Text meant only for screen readers. */
@@ -2202,4 +2204,26 @@ a, a:link, a:visited {
 }
 .sticky, .bypostauthor {
 	position: relative;
+}
+
+/************************************************
+*	25.	Organic Widgets
+************************************************/
+
+.organic-ocw-container {
+	background-color: #ffffff;
+	border-radius: 3px 3px 0px 0px;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, .24);
+	-moz-box-shadow: 0px 0px 4px rgba(0, 0, 0, .24);
+	-webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, .24);
+}
+.organic-ocw-container .organic-widget:first-child .organic-widgets-section {
+	border-radius: 3px 3px 0px 0px;
+}
+.organic-ocw-container .organic-widget:last-child .organic-widgets-section {
+	border-bottom: none;
+}
+.organic-widgets-section {
+	padding: 36px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }

@@ -1,4 +1,4 @@
-Natural Lite v1.3.1
+Natural Lite v1.3.2.1
 Copyright 2016 Organic Themes.
 http://www.organicthemes.com
 Natural Lite is distributed under the terms of the GNU GPL
@@ -139,3 +139,12 @@ CHANGELOG v1.3:
 CHANGELOG v1.3.1:
 - Updated screenshot
 - Updated theme description
+
+CHANGELOG v1.3.2:
+- Enable selective refresh for widgets
+- Added 'use strict' to jquery.custom.js
+- Added plugin activation recommendations
+- Style tweaks
+
+CHANGELOG v1.3.2.1:
+- Fixed textdomain
