@@ -46,7 +46,7 @@
 
 					<p><?php esc_html_e( 'Copyright', 'natural-lite' ); ?> &copy; <?php echo date( esc_html__( 'Y', 'natural-lite' ) ); ?> &middot; <?php esc_html_e( 'All Rights Reserved', 'natural-lite' ); ?> &middot; <?php bloginfo( 'name' ); ?></p>
 
-					<p><?php printf( esc_html__( 'Theme: %1$s by %2$s', 'natural-lite' ), 'Natural Lite', '<a href="http://organicthemes.com/" rel="designer">Organic Themes</a>' ); ?> &middot; <a href="<?php bloginfo( 'rss2_url' ); ?>"><?php esc_html_e( 'RSS Feed', 'natural-lite' ); ?></a> &middot; <?php wp_loginout(); ?></p>
+					<p><?php printf( esc_html__( 'Theme: %1$s by %2$s', 'natural-lite' ), 'Natural Lite', '<a href="https://organicthemes.com/" rel="designer">Organic Themes</a>' ); ?> &middot; <a href="<?php bloginfo( 'rss2_url' ); ?>"><?php esc_html_e( 'RSS Feed', 'natural-lite' ); ?></a> &middot; <?php wp_loginout(); ?></p>
 
 				</div>
 
