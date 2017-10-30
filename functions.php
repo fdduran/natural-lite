@@ -229,22 +229,6 @@ function natural_lite_admin_notice() {
 
 		<p><?php printf( __( 'Thanks for choosing the Natural Lite theme! Enter your email to receive important updates and information from <a href="%1$s" target="_blank">Organic Themes</a>.', 'natural-lite' ), 'https://organicthemes.com' ); ?></p>
 
-		<div id="mc_embed_signup" class="clear" style="overflow: hidden; margin-bottom: 12px;">
-			<form action="//organicthemes.us1.list-manage.com/subscribe/post?u=7cf6b005868eab70f031dc806&amp;id=c3cce2fac0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-				<div id="mc_embed_signup_scroll">
-					<div id="mce-responses" class="clear">
-						<div class="response" id="mce-error-response" style="display:none"></div>
-						<div class="response" id="mce-success-response" style="display:none"></div>
-					</div>
-					<div class="mc-field-group" style="float: left;">
-						<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email Address">
-					</div>
-					<div style="float: left; margin-left: 6px;"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-					<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_7cf6b005868eab70f031dc806_c3cce2fac0" tabindex="-1" value=""></div>
-				</div>
-			</form>
-		</div>
-
 		<div class="follows" style="overflow: hidden; margin-bottom: 12px;">
 
 			<div id="mc_embed_signup" class="clear" style="float: left;">
