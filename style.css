@@ -2,12 +2,12 @@
 
 	Theme Name: Natural Lite
 	Theme URI: http://www.organicthemes.com/theme/natural-theme/
-	Description: A versatile multi-purpose business and blogging theme with a natural and earthy design. Natural Lite is perfect for craftsmen or retailers of natural products, environmental organizations and more. It's a great website solution for promoting a green lifestyle; makers of handmade jewelry; organic gardening; ecotourism; nature tours; homemade cooking recipes; hiking; adventures and more.
+	Description: A versatile multi-purpose business and blogging theme with a natural and earthy design. Natural Lite is perfect for craftsmen or retailers of natural products, environmental organizations and more. It's a great website solution for promoting a green lifestyle; makers of handmade jewelry; organic gardening; ecotourism; nature tours; homemade cooking recipes; hiking; adventures and more. Demo: (https://organicthemes.com/demo/?demo=natural-lite)
 	Author: Organic Themes
 	Author URI: http://www.organicthemes.com
 	License: GNU General Public License v2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-	Version: 1.3.5
+	Version: 1.3.6
 	Text Domain: natural-lite
 	Domain Path: /languages/
 	Tags: one-column, two-columns, three-columns, right-sidebar, custom-background, custom-header, custom-menu, featured-images, featured-image-header, flexible-header, full-width-template, theme-options, translation-ready, sticky-post, footer-widgets, blog, news
@@ -365,12 +365,7 @@ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active {
 }
 .custom-logo-link {
 	display: block;
-}
-.custom-logo-link img {
-	width: auto;
-	height: auto;
-	max-height: 480px;
-	zoom: 50%;
+	line-height: 0;
 }
 #custom-header {
 	display: block;

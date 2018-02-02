@@ -1,4 +1,4 @@
-Natural Lite v1.3.5
+Natural Lite v1.3.6
 Copyright 2016 Organic Themes.
 http://www.organicthemes.com
 Natural Lite is distributed under the terms of the GNU GPL
@@ -160,3 +160,10 @@ CHANGELOG v1.3.4:
 
 CHANGELOG v1.3.5:
 - Removed duplicate email subscribe field
+
+CHANGELOG v1.3.6:
+- Removed force activation
+- Updated theme description with demo link
+- Reorganized customizer files
+- Added logo resizer
+- Logo style updates

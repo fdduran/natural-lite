@@ -320,6 +320,11 @@ add_action( 'customize_register', 'natural_lite_theme_customizer' );
  * asynchronously.
  */
 function natural_lite_customize_preview_js() {
-	wp_enqueue_script( 'natural-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ) );
+	wp_enqueue_script( 'natural-customizer', get_template_directory_uri() . '/customizer/js/customizer.js', array( 'customize-preview' ) );
 }
 add_action( 'customize_preview_init', 'natural_lite_customize_preview_js' );
+
+/**
+ * Logo Resizer
+ */
+require get_template_directory() . '/customizer/logo-resizer.php';
