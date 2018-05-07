@@ -1,4 +1,4 @@
-Natural Lite v1.3.6
+Natural Lite v1.3.7
 Copyright 2016 Organic Themes.
 http://www.organicthemes.com
 Natural Lite is distributed under the terms of the GNU GPL
@@ -167,3 +167,6 @@ CHANGELOG v1.3.6:
 - Reorganized customizer files
 - Added logo resizer
 - Logo style updates
+
+CHANGELOG v1.3.7:
+- Added upgrade options
