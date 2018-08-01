@@ -188,6 +188,19 @@ add_action( 'after_setup_theme', 'natural_lite_setup' );
 
 /*
 -------------------------------------------------------------------------------------------------------
+	Admin Support Link
+-------------------------------------------------------------------------------------------------------
+*/
+
+function natural_lite_support_link() {
+	global $submenu;
+	$menu_link = esc_url( 'https://organicthemes.com/support/' );
+	$submenu['themes.php'][6] = array( __( 'Theme Support', 'natural-lite' ), 'manage_options', $menu_link, '', 1 );
+}
+add_action( 'admin_menu', 'natural_lite_support_link' );
+
+/*
+-------------------------------------------------------------------------------------------------------
 	Admin Notice
 -------------------------------------------------------------------------------------------------------
 */
