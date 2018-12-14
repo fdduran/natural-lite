@@ -19,6 +19,9 @@ if ( ! function_exists( 'natural_lite_setup' ) ) :
 		// Add title tag.
 		add_theme_support( 'title-tag' );
 
+		// Enable support for wide alignment class for Gutenberg blocks.
+		add_theme_support( 'align-wide' );
+
 		// Enable selective refresh for Widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
@@ -51,9 +54,9 @@ if ( ! function_exists( 'natural_lite_setup' ) ) :
 		*/
 		register_default_headers( array(
 			'default' => array(
-			'url'   => get_template_directory_uri() . '/images/default-header.jpg',
-			'thumbnail_url' => get_template_directory_uri() . '/images/default-header.jpg',
-			'description'   => esc_html__( 'Default Custom Header', 'natural-lite' ),
+				'url'           => get_template_directory_uri() . '/images/default-header.jpg',
+				'thumbnail_url' => get_template_directory_uri() . '/images/default-header.jpg',
+				'description'   => esc_html__( 'Default Custom Header', 'natural-lite' ),
 			),
 		));
 		$defaults = array(
@@ -188,7 +191,7 @@ add_action( 'after_setup_theme', 'natural_lite_setup' );
 
 /*
 -------------------------------------------------------------------------------------------------------
-	Admin Support Link
+	Admin Support and Upgrade Link
 -------------------------------------------------------------------------------------------------------
 */
 
@@ -199,15 +202,22 @@ function natural_lite_support_link() {
 }
 add_action( 'admin_menu', 'natural_lite_support_link' );
 
+function natural_lite_upgrade_link() {
+	global $submenu;
+	$upgrade_link = esc_url( 'https://organicthemes.com/theme/natural-theme/?utm_source=lite_upgrade' );
+	$submenu['themes.php'][] = array( __( 'Theme Upgrade', 'natural-lite' ), 'manage_options', $upgrade_link );
+}
+add_action( 'admin_menu', 'natural_lite_upgrade_link' );
+
 /*
 -------------------------------------------------------------------------------------------------------
 	Admin Notice
 -------------------------------------------------------------------------------------------------------
 */
 
-/** Function natural_lite_admin_notice */
-function natural_lite_admin_notice() {
-	if ( ! PAnD::is_admin_notice_active( 'notice-natural-lite-30' ) ) {
+/** Function natural_lite_admin_notice_follow */
+function natural_lite_admin_notice_follow() {
+	if ( ! PAnD::is_admin_notice_active( 'notice-natural-lite-follow-30' ) ) {
 		return;
 	}
 	?>
@@ -238,14 +248,14 @@ function natural_lite_admin_notice() {
 		return t;
 	}(document, "script", "twitter-wjs"));</script>
 
-	<div data-dismissible="notice-natural-lite-30" class="notice updated is-dismissible">
+	<div data-dismissible="notice-natural-lite-follow-30" class="notice updated is-dismissible">
 
 		<p><?php printf( __( 'Thanks for choosing the Natural Lite theme! Enter your email to receive important updates and information from <a href="%1$s" target="_blank">Organic Themes</a>.', 'natural-lite' ), 'https://organicthemes.com' ); ?></p>
 
 		<div class="follows" style="overflow: hidden; margin-bottom: 12px;">
 
 			<div id="mc_embed_signup" class="clear" style="float: left;">
-				<form action="//organicthemes.us1.list-manage.com/subscribe/post?u=7cf6b005868eab70f031dc806&amp;id=c3cce2fac0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+				<form style="margin:0px;" action="//organicthemes.us1.list-manage.com/subscribe/post?u=7cf6b005868eab70f031dc806&amp;id=c3cce2fac0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 					<div id="mc_embed_signup_scroll">
 						<div id="mce-responses" class="clear">
 							<div class="response" id="mce-error-response" style="display:none"></div>
@@ -272,8 +282,28 @@ function natural_lite_admin_notice() {
 	<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
 	<?php
 }
+
+/** Function natural_lite_admin_notice_review */
+function natural_lite_admin_notice_review() {
+	if ( ! PAnD::is_admin_notice_active( 'notice-natural-lite-review-30' ) ) {
+		return;
+	}
+	?>
+
+	<div data-dismissible="notice-natural-lite-review-30" class="notice updated is-dismissible">
+
+		<p><?php printf( wp_kses_post( '🍍 Aloha! Mahalo for using the <a href="%1$s" target="_blank">Natural Lite</a> theme. As a <b>BIG</b> favor, could you please take a moment to <a href="%2$s" target="_blank">leave a positive review</a> for this theme. It takes a great deal of time to build and maintain a free product such as this, and your support is greatly appreciated.', 'natural-lite' ), 'https://organicthemes.com/theme/natural-lite/', 'https://wordpress.org/support/theme/natural-lite/reviews/#new-post' ); ?></p>
+		<p><b><?php esc_html_e( '&mdash; David Morgan', 'natural-lite' ); ?></b><br/>
+		<b><?php printf( wp_kses_post( 'Co-founder of <a href="%1$s" target="_blank">Organic Themes</a>', 'natural-lite' ), 'https://organicthemes.com/' ); ?></b></p>
+
+	</div>
+
+	<?php
+}
+
 add_action( 'admin_init', array( 'PAnD', 'init' ) );
-add_action( 'admin_notices', 'natural_lite_admin_notice' );
+add_action( 'admin_notices', 'natural_lite_admin_notice_follow', 10 );
+add_action( 'admin_notices', 'natural_lite_admin_notice_review', 10 );
 
 require( get_template_directory() . '/includes/persist-admin-notices-dismissal/persist-admin-notices-dismissal.php' );
 
@@ -321,17 +351,14 @@ if ( ! function_exists( 'natural_lite_enqueue_scripts' ) ) {
 		wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.css', array( 'natural-style' ), '1.0' );
 
 		// Resgister Scripts.
-		wp_register_script( 'fitvids', get_template_directory_uri() . '/js/jquery.fitvids.js', array( 'jquery' ), '20130729' );
-		wp_register_script( 'hover', get_template_directory_uri() . '/js/hoverIntent.js', array( 'jquery' ), '20130729' );
-		wp_register_script( 'superfish', get_template_directory_uri() . '/js/superfish.js', array( 'jquery', 'hover' ), '20130729' );
+		wp_register_script( 'fitvids', get_template_directory_uri() . '/js/jquery.fitvids.js', array( 'jquery' ), '1.0' );
 
 		// Enqueue Scripts.
-		wp_enqueue_script( 'natural-custom', get_template_directory_uri() . '/js/jquery.custom.js', array( 'jquery', 'superfish', 'fitvids' ), '20130729', true );
-		wp_enqueue_script( 'natural-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20130729', true );
+		wp_enqueue_script( 'natural-custom', get_template_directory_uri() . '/js/jquery.custom.js', array( 'jquery', 'fitvids' ), '1.0', true );
 
 		// Load Flexslider on front page and slideshow page template.
 		if ( is_page_template( 'template-home.php' ) ) {
-			wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/js/jquery.flexslider.js', array( 'jquery' ), '20130729' );
+			wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/js/jquery.flexslider.js', array( 'jquery' ), '1.0' );
 		}
 
 		// Load single scripts only on single pages.
@@ -340,6 +367,7 @@ if ( ! function_exists( 'natural_lite_enqueue_scripts' ) ) {
 		}
 	}
 	add_action( 'wp_enqueue_scripts', 'natural_lite_enqueue_scripts' );
+
 }
 
 if ( ! function_exists( 'natural_lite_enqueue_admin_scripts' ) ) {
@@ -351,8 +379,30 @@ if ( ! function_exists( 'natural_lite_enqueue_admin_scripts' ) ) {
 		}
 		wp_enqueue_script( 'natural-custom-admin', get_template_directory_uri() . '/js/jquery.custom.admin.js', array( 'jquery' ), '1.0', true );
 	}
+	add_action( 'admin_enqueue_scripts', 'natural_lite_enqueue_admin_scripts' );
+
 }
-add_action( 'admin_enqueue_scripts', 'natural_lite_enqueue_admin_scripts' );
+
+/*
+-------------------------------------------------------------------------------------------------------
+	Gutenberg Editor Styles
+-------------------------------------------------------------------------------------------------------
+*/
+
+/**
+ * Enqueue WordPress theme styles within Gutenberg.
+ */
+function natural_lite_gutenberg_styles() {
+	// Load the theme styles within Gutenberg.
+	wp_enqueue_style(
+		'natural-lite-gutenberg',
+		get_theme_file_uri( '/css/gutenberg.css' ),
+		false,
+		'1.0',
+		'all'
+	);
+}
+add_action( 'enqueue_block_editor_assets', 'natural_lite_gutenberg_styles' );
 
 /*
 -------------------------------------------------------------------------------------------------------
@@ -389,21 +439,21 @@ function natural_lite_widgets_init() {
 add_action( 'widgets_init', 'natural_lite_widgets_init' );
 
 /*
-------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
 Content Width
-------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
 */
 
-if ( ! isset( $content_width ) ) {
-	$content_width = 640; }
+if ( ! isset( $content_width ) )
+	$content_width = 760;
 
 /**
  * Adjust content_width value based on the presence of widgets
  */
 function natural_lite_content_width() {
-	if ( ! is_active_sidebar( 'sidebar-1' ) || is_active_sidebar( 'sidebar-1' ) || is_active_sidebar( 'sidebar-1' ) ) {
+	if ( is_singular() && ! is_active_sidebar( 'sidebar-1' ) ) {
 		global $content_width;
-		$content_width = 960;
+		$content_width = 1180;
 	}
 }
 add_action( 'template_redirect', 'natural_lite_content_width' );
@@ -585,6 +635,15 @@ function natural_lite_body_class( $classes ) {
 	} else {
 		$classes[] = 'natural-header-inactive';
 	}
+
+	if ( is_active_sidebar( 'sidebar-1' ) && ! is_page_template( 'template-full.php' ) ) {
+		$classes[] = 'natural-sidebar-active';
+	} else {
+		$classes[] = 'natural-sidebar-inactive';
+	}
+
+	if ( is_page_template( 'template-full.php' ) ) {
+		$classes[] = 'natural-full-template'; }
 
 	if ( empty( $header_image ) ) {
 		$classes[] = 'natural-header-inactive'; }

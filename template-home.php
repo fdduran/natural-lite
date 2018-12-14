@@ -186,12 +186,12 @@ get_header(); ?>
 	<!-- BEGIN .row -->
 	<div class="row">
 
-		<!-- BEGIN .postarea -->
-		<div class="postarea full">
+		<!-- BEGIN .post-area -->
+		<div class="post-area full">
 
 			<?php get_template_part( 'content/content', 'none' ); ?>
 
-		<!-- END .postarea -->
+		<!-- END .post-area -->
 		</div>
 
 	<!-- END .row -->

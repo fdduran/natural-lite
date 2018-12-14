@@ -25,12 +25,12 @@ get_header(); ?>
 		<!-- BEGIN .eleven columns -->
 		<div class="eleven columns">
 
-			<!-- BEGIN .postarea -->
-			<div class="postarea">
+			<!-- BEGIN .post-area -->
+			<div class="post-area">
 
 				<?php get_template_part( 'loop', 'blog' ); ?>
 
-			<!-- END .postarea -->
+			<!-- END .post-area -->
 			</div>
 
 		<!-- END .eleven columns -->
@@ -49,12 +49,12 @@ get_header(); ?>
 		<!-- BEGIN .sixteen columns -->
 		<div class="sixteen columns">
 
-			<!-- BEGIN .postarea full -->
-			<div class="postarea full">
+			<!-- BEGIN .post-area full -->
+			<div class="post-area full">
 
 				<?php get_template_part( 'loop', 'blog' ); ?>
 
-			<!-- END .postarea full -->
+			<!-- END .post-area full -->
 			</div>
 
 		<!-- END .sixteen columns -->

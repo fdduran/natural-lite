@@ -16,7 +16,7 @@ get_header(); ?>
 		<!-- BEGIN .eleven columns -->
 		<div class="eleven columns">
 
-			<div class="postarea">
+			<div class="post-area">
 				<h1 class="headline"><?php esc_html_e( 'Not Found, Error 404', 'natural-lite' ); ?></h1>
 				<p><?php esc_html_e( 'The page you are looking for no longer exists.', 'natural-lite' ); ?></p>
 			</div>
@@ -37,7 +37,7 @@ get_header(); ?>
 		<!-- BEGIN .sixteen columns -->
 		<div class="sixteen columns">
 
-			<div class="postarea full">
+			<div class="post-area full">
 				<h1 class="headline"><?php esc_html_e( 'Not Found, Error 404', 'natural-lite' ); ?></h1>
 				<p><?php esc_html_e( 'The page you are looking for no longer exists.', 'natural-lite' ); ?></p>
 			</div>

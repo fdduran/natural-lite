@@ -1,26 +1,39 @@
-Natural Lite v1.3.9
-Copyright 2016 Organic Themes.
-http://www.organicthemes.com
-Natural Lite is distributed under the terms of the GNU GPL
+=== Natural Lite ===
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
+Version: 1.4
+Contributors: organicthemes, itsdavidmorgan
+Tags: one-column, two-columns, three-columns, right-sidebar, custom-background, custom-header, custom-menu, featured-images, featured-image-header, flexible-header, full-width-template, theme-options, translation-ready, sticky-post, footer-widgets, blog, news
+Requires at least: 4.8
+Tested up to: 5.0
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+== Description ==
 
 Natural Lite WordPress Theme is derived from Organic Natural WordPress Theme distributed by Organic Themes, Copyright 2016 Invulu, Inc.
 Organic Natural WordPress Theme is distributed under the terms of the GNU GPL.
 
-Note:
+Note: The site title and site logo are not displayed at the same time. If a logo is added, the site title is hidden from display in its place.
 
-The site title and site logo are not displayed at the same time. If a logo is added, the site title is hidden from display in its place.
+== Installation ==
 
-Image Credits
+For more information, please refer to our Quick Start Guide, https://organicthemes.com/tutorial/quick-start-guide/
+
+1. Navigate to Appearance > Themes within the WordPress admin.
+2. Click Add New at the top of the page.
+3. Click Upload Theme at the top of the page.
+4. Select your downloaded theme .zip file to upload.
+5. Click the Install Now button.
+6. Activate the theme.
+
+== Copyright ==
+
+Natural Lite WordPress Theme, Copyright 2018 Invulu, Inc.
+Natural Lite is distributed under the terms of the GNU GPL
+
+== Credits ==
+
+== Images ==
 
 - logo.png: Created by David Morgan, http://dav.idmorgan.com. Licensed under the GPLv2 license.
 - logo.psd: Created by David Morgan, http://dav.idmorgan.com. Licensed under the GPLv2 license.
@@ -32,19 +45,16 @@ Image Credits
 - image-contact.jpg: Downloaded from Unsplash, https://unsplash.com. Licensed under Creative Commons Zero license, https://unsplash.com/license.
 - default-pattern.png: Downloaded from Subtle Patterns, http://subtlepatterns.com. Licensed under the CC BY-SA 3.0 license.
 
-Font Awesome
+== Font Awesome ==
 
 - Font License: SIL OFL 1.1 http://scripts.sil.org/OFL
 - Code License: MIT License http://opensource.org/licenses/mit-license.html
 
-Navigation.js
+== Scripts ==
 
-- Licensed under the GPLv2 license.
+- navigation.js, Licensed under the GPLv2 license.
 
-INSTALL:
-1. Upload the theme by navigating to Appearance > Themes > Install Themes within the WordPress admin. Select the theme zip file to upload.
-2. Activate the theme after uploading.
-3. Configure and save the theme options within Appearance > Customize.
+== Changelog ==
 
 CHANGELOG v1.0.1:
 - Updated screenshot
@@ -178,3 +188,17 @@ CHANGELOG v1.3.8:
 
 CHANGELOG v1.3.9
 - Fixed issue of custom admin submenu link overwriting other links
+
+CHANGELOG v1.4
+- Added Gutenberg support
+- Added wide and full alignment block support
+- Added Gutenberg editor styles
+- Replaced home featured page sizing with CSS flexbox solution
+- Replaced superfish.js menu with pure CSS menu
+- Updated flexslider.js
+- Removed navigation.js
+- Removed hoverIntent.js
+- Mobile menu overhaul
+- Added content width function
+- General cleanup
+- Style tweaks

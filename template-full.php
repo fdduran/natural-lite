@@ -23,12 +23,12 @@ get_header(); ?>
 		<!-- BEGIN .sixteen columns -->
 		<div class="sixteen columns">
 
-			<!-- BEGIN .postarea full -->
-			<div class="postarea full">
+			<!-- BEGIN .post-area full -->
+			<div class="post-area full">
 
 				<?php get_template_part( 'loop', 'page' ); ?>
 
-			<!-- END .postarea full -->
+			<!-- END .post-area full -->
 			</div>
 
 		<!-- END .sixteen columns -->

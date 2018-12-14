@@ -28,12 +28,12 @@ get_header(); ?>
 			<!-- BEGIN .seven columns -->
 			<div class="seven columns">
 
-				<!-- BEGIN .postarea middle -->
-				<div class="postarea middle">
+				<!-- BEGIN .post-area middle -->
+				<div class="post-area middle">
 
 					<?php get_template_part( 'loop', 'archive' ); ?>
 
-				<!-- END .postarea middle -->
+				<!-- END .post-area middle -->
 				</div>
 
 			<!-- END .seven columns -->
@@ -60,12 +60,12 @@ get_header(); ?>
 			<!-- BEGIN .thirteen columns -->
 			<div class="thirteen columns">
 
-				<!-- BEGIN .postarea -->
-				<div class="postarea right">
+				<!-- BEGIN .post-area -->
+				<div class="post-area right">
 
 					<?php get_template_part( 'loop', 'archive' ); ?>
 
-				<!-- END .postarea -->
+				<!-- END .post-area -->
 				</div>
 
 			<!-- END .thirteen columns -->
@@ -76,12 +76,12 @@ get_header(); ?>
 			<!-- BEGIN .eleven columns -->
 			<div class="eleven columns">
 
-				<!-- BEGIN .postarea -->
-				<div class="postarea">
+				<!-- BEGIN .post-area -->
+				<div class="post-area">
 
 					<?php get_template_part( 'loop', 'archive' ); ?>
 
-				<!-- END .postarea -->
+				<!-- END .post-area -->
 				</div>
 
 			<!-- END .eleven columns -->
@@ -100,12 +100,12 @@ get_header(); ?>
 			<!-- BEGIN .sixteen columns -->
 			<div class="sixteen columns">
 
-				<!-- BEGIN .postarea full -->
-				<div class="postarea full">
+				<!-- BEGIN .post-area full -->
+				<div class="post-area full">
 
 					<?php get_template_part( 'loop', 'archive' ); ?>
 
-				<!-- END .postarea full -->
+				<!-- END .post-area full -->
 				</div>
 
 			<!-- END .sixteen columns -->

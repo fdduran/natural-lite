@@ -113,16 +113,17 @@
 
 					<h1 class="menu-toggle"><?php esc_html_e( 'Menu', 'natural-lite' ); ?></h1>
 
-					<?php if ( has_nav_menu( 'header-menu' ) ) {
+					<?php
+					if ( has_nav_menu( 'header-menu' ) ) {
 						wp_nav_menu( array(
-							'theme_location' => 'header-menu',
-							'title_li' => '',
-							'depth' => 4,
-							'container_class' => '',
+							'theme_location'  => 'header-menu',
+							'title_li'        => '',
+							'depth'           => 4,
+							'container_class' => 'menu-container',
 							'menu_class'      => 'menu',
-							)
-						);
-					} else { ?>
+						) );
+					} else {
+						?>
 						<ul class="menu"><?php wp_list_pages( 'title_li=&depth=4' ); ?></ul>
 					<?php } ?>
 

@@ -200,7 +200,7 @@
 		line-height: 1.2;
 	}
 	#navigation {
-		background: #242424;
+		font-size: 1em;
 		position: relative;
 		top: auto;
 		padding: 0px;
@@ -208,27 +208,12 @@
 		-moz-box-shadow: inset 0px 1px 0px rgba(0, 0, 0, .1);
 		-webkit-box-shadow: inset 0px 1px 0px rgba(0, 0, 0, .1);
 	}
-	#navigation .corner-left,
-	#navigation .corner-right {
-		display: none;
-	}
-	.mobile-menu {
-		margin: 0px;
-		padding: 0px;
-	}
-	.menu-toggle,
-	.main-small-navigation ul.mobile-menu.toggled-on {
-		display: block;
-	}
-	.navigation-main ul.menu,
-	.sf-sub-indicator {
-		display: none;
-	}
-	.menu {
+	.menu-toggle {
 		display: block;
 	}
 	.menu-toggle {
 		color: #FFFFFF;
+		background: none;
 		font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
 		font-size: 1.8em;
 		font-weight: 400;
@@ -236,55 +221,83 @@
 		letter-spacing: 0;
 		text-transform: none;
 		text-align: center;
-		margin: 0;
+		margin: 0px auto;
 		padding: 12px;
+		border: none;
+		box-shadow: none;
+	}
+	.menu-toggle:hover {
+		border: none;
+		box-shadow: none;
 	}
 	.menu-toggle:before {
 		color: #FFFFFF;
 		font-family: 'FontAwesome';
-		content: ' ';
+		content: '\f0c9 ';
 		top: 1px;
 		margin-right: 6px;
 		position: relative;
 	}
-	.mobile-menu ul.sub-menu {
-		display: block !important;
-		visibility: visible !important;
-		left: auto;
-		margin: 0;
-		padding: 0;
-	}
-	.mobile-menu ul,
-	.mobile-menu li {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-	}
-	.mobile-menu li {
+	.menu-container {
 		display: block;
+	}
+	.menu-container ul.menu {
+		display: none;
+		width: 100%;
+		margin: 0px;
+		padding: 0px;
+	}
+	.menu-container ul.menu ul.sub-menu {
+		display: none;
+		width: 100%;
+		position: relative;
+		top: 0; left: 0;
+		margin: 0px;
+		padding: 0px;
+		opacity: 1;
+	}
+	.menu-container ul.menu > li,
+	.menu-container ul.sub-menu > li {
+		border-top: 1px solid rgba(0, 0, 0, 0.2);
+	}
+	.menu-container ul.menu li,
+	.menu-container ul.sub-menu li {
+		float: none;
+		display: block;
+		width: 100%;
 		text-align: center;
 		line-height: 30px;
 	}
-	.mobile-menu li li a:before {
-		content: '- ';
+	.menu-container ul.menu li.menu-item-has-children > a::after {
+		content: '\f107';
+		font-family: 'FontAwesome';
+		margin-left: 8px;
 	}
-	.mobile-menu li li li a:before {
-		content: '-- ';
-	}
-	.mobile-menu li li li li a:before {
-		content: '--- ';
-	}
-	.mobile-menu a {
+	.menu-container ul.menu a,
+	.menu-container ul.menu a:link,
+	.menu-container ul.menu a:visited,
+	.menu-container ul.menu ul.sub-menu a,
+	.menu-container ul.menu ul.sub-menu a:link,
+	.menu-container ul.menu ul.sub-menu a:visited {
 		display: block;
+		width: 100%;
 		color: #EEEEEE !important;
 		font-size: 1.2em;
+		line-height: 36px;
+		text-align: center;
 		text-decoration: none;
-		text-shadow: -1px -1px rgba(0,0,0, 0.1);
-		padding: 6px 0px;
-		border-top: 1px solid rgba(0,0,0, 0.1);
+		text-shadow: -1px -1px rgba(0, 0, 0, 0.12);
+		padding: 6px 12px;
+		border: none !important;
+		box-sizing: border-box;
 	}
-	.mobile-menu a:hover {
-		background: rgba(0,0,0, 0.08);
+	.menu-container ul.menu a:hover,
+	.menu-container ul.menu a:focus,
+	.menu-container ul.menu a:active,
+	.menu-container ul.menu ul.sub-menu a:hover,
+	.menu-container ul.menu ul.sub-menu a:focus,
+	.menu-container ul.menu ul.sub-menu a:active {
+		background: rgba(0, 0, 0, 0.08);
 		color: #FFFFFF !important;
 		text-decoration: none;
 	}
@@ -320,6 +333,9 @@
 	.featured-pages .holder {
 		margin-bottom: 12px;
 	}
+	.featured-pages {
+		display: block;
+	}
 	.featured-pages,
 	.featured-posts {
 		margin-bottom: 0px;
@@ -335,20 +351,28 @@
 	.home-news .information .feature-img {
 		margin-right: 0px;
 	}
-	.postarea,
-	.postarea.full,
-	.postarea.middle {
+	.post-area,
+	.post-area.full,
+	.post-area.middle {
 		padding: 24px;
 	}
-	.postarea.full .article {
+	.post-area.full .article {
 		padding: 0px;
-}
-	.postarea .feature-img,
-	.postarea.full .feature-img,
-	.postarea.middle .feature-img {
+	}
+	.post-area .feature-img,
+	.post-area.full .feature-img,
+	.post-area.middle .feature-img {
 		width: calc(100% + 48px);
 		margin-left: -24px;
-}
+	}
+	.natural-sidebar-inactive .alignfull,
+	.natural-sidebar-inactive .alignwide,
+	.natural-sidebar-active .alignfull,
+	.natural-sidebar-active .alignwide,
+	.natural-sidebar-inactive.page .alignfull {
+		width: calc(100% + 48px);
+		left: -24px;
+	}
 	.post-author p {
 		float: left;
 		display: block;

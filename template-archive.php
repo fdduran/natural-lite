@@ -23,8 +23,8 @@ get_header(); ?>
 		<!-- BEGIN .sixteen columns -->
 		<div class="sixteen columns">
 
-			<!-- BEGIN .postarea full -->
-			<div class="postarea full">
+			<!-- BEGIN .post-area full -->
+			<div class="post-area full">
 
 				<!-- BEGIN .page-holder -->
 				<div class="page-holder">
@@ -52,7 +52,7 @@ get_header(); ?>
 				<!-- END .page-holder -->
 				</div>
 
-			<!-- END .postarea full -->
+			<!-- END .post-area full -->
 			</div>
 
 		<!-- END .sixteen columns -->
