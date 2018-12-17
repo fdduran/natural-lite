@@ -348,7 +348,11 @@
 		margin-left: 0px;
 		margin-right: 0px;
 	}
+	.home-news .information {
+		display: block;
+	}
 	.home-news .information .feature-img {
+		min-height: 240px;
 		margin-right: 0px;
 	}
 	.post-area,

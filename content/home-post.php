@@ -12,7 +12,7 @@
 <?php $description = category_description( $cat ); ?>
 
 <?php if ( ! empty( $description ) ) { ?>
-	<div class="cat-description"><h4 class="title text-center"><?php echo $description ?></h4></div>
+	<div class="cat-description text-center"><?php echo $description ?></div>
 <?php } ?>
 
 <?php if ( get_query_var( 'paged' ) ) { $paged = get_query_var( 'paged' );
