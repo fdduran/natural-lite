@@ -1,6 +1,6 @@
 === Natural Lite ===
 
-Version: 1.4.1
+Version: 1.4.2
 Contributors: organicthemes, itsdavidmorgan
 Tags: one-column, two-columns, three-columns, right-sidebar, custom-background, custom-header, custom-menu, featured-images, featured-image-header, flexible-header, full-width-template, theme-options, translation-ready, sticky-post, footer-widgets, blog, news
 Requires at least: 4.8
@@ -208,3 +208,6 @@ CHANGELOG v1.4.1
 - Fixed menu widget display issue
 - Mobile style fixes
 - Style tweaks
+
+CHANGELOG v1.4.2
+- Minor style updates for blocks
