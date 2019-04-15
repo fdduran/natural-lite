@@ -7,7 +7,7 @@
 	Author URI: http://www.organicthemes.com
 	License: GNU General Public License v2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-	Version: 1.4.2
+	Version: 1.4.3
 	Text Domain: natural-lite
 	Domain Path: /languages/
 	Tags: one-column, two-columns, three-columns, right-sidebar, custom-background, custom-header, custom-menu, featured-images, featured-image-header, flexible-header, full-width-template, theme-options, translation-ready, sticky-post, footer-widgets, blog, news
@@ -1482,12 +1482,7 @@ img.alignleft,
 	margin-bottom: 24px;
 	padding: 24px;
 	box-shadow: 0px 0px 4px rgba(0, 0, 0, .24);
-	-moz-box-shadow: 0px 0px 4px rgba(0, 0, 0, .24);
-	-webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, .24);
 	border-radius: 2px;
-	-moz-border-radius: 2px;
-	-khtml-border-radius: 2px;
-	-webkit-border-radius: 2px;
 }
 .widget ul, .widget li {
 	list-style-type: none;
@@ -1499,19 +1494,14 @@ img.alignleft,
 	margin: 2px 0px;
 	padding: 4px 8px;
 	border-radius: 2px;
-	-moz-border-radius: 2px;
-	-khtml-border-radius: 2px;
-	-webkit-border-radius: 2px;
 	transition: all .25s;
 	-moz-transition: all .25s;
 	-webkit-transition: all .25s;
 	-o-transition: all .25s;
 }
 .widget ul > li:hover {
-	background: rgba(0, 0, 0, .04);
+	background-color: rgba(0, 0, 0, .04);
 	box-shadow: inset 0px 3px 0px rgba(0, 0, 0, .08);
-	-moz-box-shadow: inset 0px 3px 0px rgba(0, 0, 0, .08);
-	-webkit-box-shadow: inset 0px 3px 0px rgba(0, 0, 0, .08);
 }
 .widget li a {
 	margin: 0px;
@@ -1536,6 +1526,17 @@ img.alignleft,
 }
 .tagcloud {
 	line-height: 1.2;
+}
+.post-area .widget {
+	background: none;
+	padding: 0px;
+	box-shadow: none;
+	border-radius: 0px;
+}
+.post-area .widget li,
+.post-area .widget ul > li:hover {
+	background: none;
+	box-shadow: none;
 }
 
 /************************************************
