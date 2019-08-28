@@ -39,7 +39,7 @@
 		<?php if ( has_post_thumbnail() ) { ?>
 			<a class="feature-img background-cover" style="background-image: url(<?php echo $thumb[0]; ?>);" href="<?php the_permalink(); ?>" rel="bookmark" title="<?php echo esc_attr( sprintf( esc_html__( 'Permalink to %s', 'natural-lite' ), the_title_attribute( 'echo=0' ) ) ); ?>"></a>
 		<?php } else { ?>
-			<div class="feature-vid"><?php echo $video ?></div>
+			<div class="feature-vid"><?php echo $video; ?></div>
 		<?php } ?>
 
 	<!-- END .six columns -->
@@ -53,15 +53,18 @@
 		<!-- BEGIN .article -->
 		<div class="article">
 
+			<div class="post-author">
+				<p class="align-left"><i class="fa fa-calendar"></i> &nbsp;<?php esc_html_e( 'Posted on', 'natural-lite' ); ?> <?php the_time( esc_html__( 'F j, Y', 'natural-lite' ) ); ?></p>
+				<p class="align-right"><i class="fa fa-comment"></i> &nbsp;<a href="<?php the_permalink(); ?>#comments"><?php comments_number( esc_html__( 'Comment', 'natural-lite' ), esc_html__( '1 Comment', 'natural-lite' ), '% Comments' ); ?></a></p>
+			</div>
+
 			<h2 class="title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 
 			<div class="excerpt">
 				<?php the_excerpt(); ?>
-			</div>
-
-			<div class="post-author">
-				<p class="align-left"><i class="fa fa-calendar"></i> &nbsp;<?php esc_html_e( 'Posted on', 'natural-lite' ); ?> <?php the_time( esc_html__( 'F j, Y', 'natural-lite' ) ); ?></p>
-				<p class="align-right"><i class="fa fa-comment"></i> &nbsp;<a href="<?php the_permalink(); ?>#comments"><?php comments_number( esc_html__( 'Comment', 'natural-lite' ), esc_html__( '1 Comment', 'natural-lite' ), '% Comments' ); ?></a></p>
+				<a class="button" href="<?php the_permalink(); ?>" rel="bookmark" title="<?php echo esc_attr( sprintf( esc_html__( 'Permalink to %s', 'natural-lite' ), the_title_attribute( 'echo=0' ) ) ); ?>">
+					<span><?php esc_html_e( 'Learn More', 'natural-lite' ); ?></span>
+				</a>
 			</div>
 
 		<!-- END .article -->

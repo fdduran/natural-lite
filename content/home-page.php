@@ -26,7 +26,9 @@
 		</div>
 
 		<div class="align-center text-center">
-			<a class="button" href="<?php the_permalink(); ?>" rel="bookmark" title="<?php echo esc_attr( sprintf( esc_html__( 'Permalink to %s', 'natural-lite' ), the_title_attribute( 'echo=0' ) ) ); ?>"><?php esc_html_e( 'Learn More', 'natural-lite' ); ?></a>
+			<a class="button" href="<?php the_permalink(); ?>" rel="bookmark" title="<?php echo esc_attr( sprintf( esc_html__( 'Permalink to %s', 'natural-lite' ), the_title_attribute( 'echo=0' ) ) ); ?>">
+				<span><?php esc_html_e( 'Learn More', 'natural-lite' ); ?></span>
+			</a>
 		</div>
 
 	<!-- END .article -->
