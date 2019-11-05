@@ -1,11 +1,11 @@
 <?php
 /**
-* This template displays single post content.
-*
-* @package Natural Lite
-* @since Natural Lite 1.0
-*
-*/
+ * This template displays single post content.
+ *
+ * @package Natural Lite
+ * @since Natural Lite 1.0
+ */
+
 get_header(); ?>
 
 <!-- BEGIN .post class -->
@@ -13,47 +13,47 @@ get_header(); ?>
 
 	<!-- BEGIN .row -->
 	<div class="row">
-	
+
 		<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
-			
+
 			<!-- BEGIN .eleven columns -->
 			<div class="eleven columns">
-	
-				<!-- BEGIN .postarea -->
-				<div class="postarea">
-		
+
+				<!-- BEGIN .post-area -->
+				<div class="post-area">
+
 					<?php get_template_part( 'loop', 'post' ); ?>
-				
-				<!-- END .postarea -->
+
+				<!-- END .post-area -->
 				</div>
-			
+
 			<!-- END .eleven columns -->
 			</div>
-			
+
 			<!-- BEGIN .five columns -->
 			<div class="five columns">
-			
-				<?php get_sidebar('post'); ?>
-				
+
+				<?php get_sidebar( 'post' ); ?>
+
 			<!-- END .five columns -->
 			</div>
-	
+
 		<?php else : ?>
-	
+
 			<!-- BEGIN .sixteen columns -->
 			<div class="sixteen columns">
-	
-				<!-- BEGIN .postarea full -->
-				<div class="postarea full">
-		
+
+				<!-- BEGIN .post-area full -->
+				<div class="post-area full">
+
 					<?php get_template_part( 'loop', 'post' ); ?>
-				
-				<!-- END .postarea full -->
+
+				<!-- END .post-area full -->
 				</div>
-			
+
 			<!-- END .sixteen columns -->
 			</div>
-	
+
 		<?php endif; ?>
 
 	<!-- END .row -->

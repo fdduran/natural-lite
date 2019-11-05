@@ -65,7 +65,7 @@ blockquote {
 	color: #333333;
 	font-family: 'Roboto Slab', Georgia, Times, serif;
 	font-weight: 400;
-	font-size: 1.8em;
+	font-size: 1.4em;
 	line-height: 1.4;
 	margin: 20px 0px;
 	padding: 20px;
@@ -108,10 +108,11 @@ pre code {
 	border: none;
 	border-radius: 0px;
 	}
-img, object, embed {
+iframe {
 	max-width: 100%;
 	}
 img, object, embed {
+	max-width: 100%;
 	height: auto;
 	margin: 0px auto 0px;
 	}

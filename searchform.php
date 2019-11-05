@@ -1,11 +1,11 @@
 <?php
 /**
-* The search form template for our theme.
-*
-* @package Natural Lite
-* @since Natural Lite 1.0
-*
-*/
+ * The search form template for our theme.
+ *
+ * @package Natural Lite
+ * @since Natural Lite 1.0
+ */
+
 ?>
 
 <form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">

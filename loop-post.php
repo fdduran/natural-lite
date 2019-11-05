@@ -1,4 +1,14 @@
-<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+<?php
+/**
+ * This template displays the post loop.
+ *
+ * @package Natural Lite
+ * @since Natural Lite 1.0
+ */
+
+?>
+
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 <h1 class="headline"><?php the_title(); ?></h1>
 
@@ -10,6 +20,9 @@
 <?php if ( has_post_thumbnail() ) { ?>
 	<div class="feature-img"><?php the_post_thumbnail( 'featured-large' ); ?></div>
 <?php } ?>
+
+<!-- BEGIN .article -->
+<div class="article">
 
 <?php the_content(); ?>
 
@@ -49,3 +62,6 @@
 <p><?php esc_html_e("Sorry, no posts matched your criteria.", 'natural-lite'); ?></p>
 
 <?php endif; ?>
+
+<!-- END .article -->
+</div>

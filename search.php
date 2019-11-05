@@ -1,13 +1,13 @@
 <?php
 /**
-* The search template for our theme.
-*
-* This template is used to display search results.
-*
-* @package Natural Lite
-* @since Natural Lite 1.0
-*
-*/
+ * The search template for our theme.
+ *
+ * This template is used to display search results.
+ *
+ * @package Natural Lite
+ * @since Natural Lite 1.0
+ */
+
 get_header(); ?>
 
 <!-- BEGIN .post class -->
@@ -15,109 +15,103 @@ get_header(); ?>
 
 	<!-- BEGIN .row -->
 	<div class="row">
-		
+
 		<?php if ( is_active_sidebar( 'sidebar-1' ) && is_active_sidebar( 'left-sidebar' ) ) : ?>
-			
+
 			<!-- BEGIN .three columns -->
 			<div class="three columns">
-			
-				<?php get_sidebar('left'); ?>
-				
+
+				<?php get_sidebar( 'left' ); ?>
+
 			<!-- END .three columns -->
 			</div>
-			
+
 			<!-- BEGIN .eight columns -->
 			<div class="eight columns">
-				
-				<!-- BEGIN .postarea -->
-				<div class="postarea middle">
-				
+
+				<!-- BEGIN .post-area -->
+				<div class="post-area middle">
+
 					<?php get_template_part( 'loop', 'archive' ); ?>
-					
-				<!-- END .postarea -->
+
+				<!-- END .post-area -->
 				</div>
-			
+
 			<!-- END .eight columns -->
 			</div>
-			
+
 			<!-- BEGIN .five columns -->
 			<div class="five columns">
-			
-				<?php get_sidebar('blog'); ?>
-				
+
+				<?php get_sidebar( 'blog' ); ?>
+
 			<!-- END .five columns -->
 			</div>
-			
-		<?php else : ?>
-		
-		<?php if ( is_active_sidebar( 'left-sidebar' ) ) : ?>
-		
+
+		<?php elseif ( is_active_sidebar( 'left-sidebar' ) ) : ?>
+
 			<!-- BEGIN .three columns -->
 			<div class="three columns">
-			
-				<?php get_sidebar('left'); ?>
-				
+
+				<?php get_sidebar( 'left' ); ?>
+
 			<!-- END .three columns -->
 			</div>
-				
+
 			<!-- BEGIN .thirteen columns -->
 			<div class="thirteen columns">
-		
-				<!-- BEGIN .postarea -->
-				<div class="postarea right">
-				
+
+				<!-- BEGIN .post-area -->
+				<div class="post-area right">
+
 					<?php get_template_part( 'loop', 'archive' ); ?>
-				
-				<!-- END .postarea -->
+
+				<!-- END .post-area -->
 				</div>
-			
+
 			<!-- END .thirteen columns -->
 			</div>
-	
-		<?php else : ?>
-		
-		<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
-			
+
+		<?php elseif ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+
 			<!-- BEGIN .eleven columns -->
 			<div class="eleven columns">
-		
-				<!-- BEGIN .postarea -->
-				<div class="postarea">
-				
+
+				<!-- BEGIN .post-area -->
+				<div class="post-area">
+
 					<?php get_template_part( 'loop', 'archive' ); ?>
-				
-				<!-- END .postarea -->
+
+				<!-- END .post-area -->
 				</div>
-			
+
 			<!-- END .eleven columns -->
 			</div>
-			
+
 			<!-- BEGIN .five columns -->
 			<div class="five columns">
-			
-				<?php get_sidebar('blog'); ?>
-				
+
+				<?php get_sidebar( 'blog' ); ?>
+
 			<!-- END .five columns -->
 			</div>
-	
+
 		<?php else : ?>
-	
+
 			<!-- BEGIN .sixteen columns -->
 			<div class="sixteen columns">
-	
-				<!-- BEGIN .postarea full -->
-				<div class="postarea full">
-				
+
+				<!-- BEGIN .post-area full -->
+				<div class="post-area full">
+
 					<?php get_template_part( 'loop', 'archive' ); ?>
-				
-				<!-- END .postarea full -->
+
+				<!-- END .post-area full -->
 				</div>
-			
+
 			<!-- END .sixteen columns -->
 			</div>
-		
-		<?php endif; ?>
-		<?php endif; ?>
+
 		<?php endif; ?>
 
 	<!-- END .row -->
